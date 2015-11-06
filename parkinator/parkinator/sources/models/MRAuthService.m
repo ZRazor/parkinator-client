@@ -64,7 +64,7 @@
 }
 
 - (void)registerWithPhone:(NSString *)phone
-               andCarType:(NSNumber *)carType
+               andCarType:(NSString *)carType
               andCarModel:(NSString *)carModel
               andCarColor:(NSString *)carColor
              andCarNumber:(NSString *)carNumber

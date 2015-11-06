@@ -7,6 +7,7 @@
 
 @class MRAuthService;
 @class MRUserData;
+@class MRPlaceService;
 
 #define MRAppDataShared [MRAppDataProvider shared]
 
@@ -14,6 +15,7 @@
 
 @property (nonatomic, strong, readonly) MRUserData *userData;
 @property (nonatomic, strong, readonly) MRAuthService *authService;
+@property (nonatomic, strong, readonly) MRPlaceService *placeService;
 
 + (MRAppDataProvider *)shared;
 

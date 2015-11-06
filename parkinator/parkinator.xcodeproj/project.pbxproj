@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A686D9D1BECC7E40015C45B /* MRPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A686D9C1BECC7E40015C45B /* MRPlaceTableViewCell.m */; };
 		3AC387461BEC6C5700758BBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC387451BEC6C5700758BBA /* main.m */; };
 		3AC387491BEC6C5700758BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC387481BEC6C5700758BBA /* AppDelegate.m */; };
 		3AC387511BEC6C5700758BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC387501BEC6C5700758BBA /* Assets.xcassets */; };
@@ -15,6 +16,9 @@
 		3AE975061BEC729F00B1E8A1 /* MRPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE975051BEC729F00B1E8A1 /* MRPlacesTableViewController.m */; };
 		3AE975081BEC72B400B1E8A1 /* places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE975071BEC72B400B1E8A1 /* places.storyboard */; };
 		3AE9750B1BEC73D200B1E8A1 /* MRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9750A1BEC73D200B1E8A1 /* MRNavigationController.m */; };
+		58AAA26334541FA13B1E628D /* MRPlaceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA7B728E841295EF38C94 /* MRPlaceService.m */; };
+		58AAA42E0EE6997787878FDF /* MRPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA503502CE675BC72E9BA /* MRPlace.m */; };
+		58AAA447CD498EDD539E99A8 /* MRPlaceMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA07AECBF134D3C1CF286 /* MRPlaceMarker.m */; };
 		58AAA49D0A4C20A770E38B0C /* HSMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAE4D2A0C1656CC7E9FCC /* HSMapView.m */; };
 		58AAA4B4ED184AC5BA6706B0 /* MRUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAF02FB0297528A185674 /* MRUserData.m */; };
 		58AAA79F516F004972DEB50E /* HSDistanceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA2DA3ECBAABF494C930F /* HSDistanceUtil.m */; };
@@ -32,6 +36,8 @@
 /* Begin PBXFileReference section */
 		1DEB11FF2269D29A2C30075B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		22818D053F67502BDCCB221C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3A686D9B1BECC7E40015C45B /* MRPlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRPlaceTableViewCell.h; sourceTree = "<group>"; };
+		3A686D9C1BECC7E40015C45B /* MRPlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRPlaceTableViewCell.m; sourceTree = "<group>"; };
 		3AC387411BEC6C5700758BBA /* parkinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parkinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC387451BEC6C5700758BBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3AC387471BEC6C5700758BBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,27 +52,33 @@
 		3AE975071BEC72B400B1E8A1 /* places.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = places.storyboard; sourceTree = "<group>"; };
 		3AE975091BEC73D200B1E8A1 /* MRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNavigationController.h; sourceTree = "<group>"; };
 		3AE9750A1BEC73D200B1E8A1 /* MRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNavigationController.m; sourceTree = "<group>"; };
+		58AAA07AECBF134D3C1CF286 /* MRPlaceMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRPlaceMarker.m; sourceTree = "<group>"; };
 		58AAA1C289DD3E0C0833FBB0 /* MRClusterRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRClusterRenderer.m; sourceTree = "<group>"; };
 		58AAA21BF38EDEFCFB496561 /* MRUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRUserData.h; sourceTree = "<group>"; };
 		58AAA23219A1F08C2B59B9EF /* HSClusterAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSClusterAlgorithm.m; sourceTree = "<group>"; };
 		58AAA232314C8C8012144747 /* HSClusterRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSClusterRenderer.h; sourceTree = "<group>"; };
 		58AAA2D8499FEC2F42ADDEAC /* MRValidateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRValidateUtils.h; sourceTree = "<group>"; };
 		58AAA2DA3ECBAABF494C930F /* HSDistanceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDistanceUtil.m; sourceTree = "<group>"; };
+		58AAA329D75367FB048C9B3E /* MRPlaceMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRPlaceMarker.h; sourceTree = "<group>"; };
 		58AAA3AFC851399F29B2174F /* MRRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRRequester.m; sourceTree = "<group>"; };
 		58AAA3B5DAE84726F91860A4 /* MRAppDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAppDataProvider.m; sourceTree = "<group>"; };
 		58AAA3BE6E462C849DD5BEAA /* MRError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRError.h; sourceTree = "<group>"; };
 		58AAA4755749EAE7EB4A7B6B /* HSClusterAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSClusterAlgorithm.h; sourceTree = "<group>"; };
 		58AAA48ED88DAE097E1885CA /* HSClusterMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSClusterMarker.m; sourceTree = "<group>"; };
 		58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRValidateUtils.m; sourceTree = "<group>"; };
+		58AAA503502CE675BC72E9BA /* MRPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRPlace.m; sourceTree = "<group>"; };
 		58AAA52B3424B4AF690C4456 /* HSDistanceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDistanceUtil.h; sourceTree = "<group>"; };
 		58AAA569D1DF6BF971BBDCAC /* MRAppDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAppDataProvider.h; sourceTree = "<group>"; };
 		58AAA6B93B17E1A08207A037 /* HSClusterMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSClusterMapView.h; sourceTree = "<group>"; };
+		58AAA79D428E7B7D147ECE48 /* MRPlaceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRPlaceService.h; sourceTree = "<group>"; };
+		58AAA7B728E841295EF38C94 /* MRPlaceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRPlaceService.m; sourceTree = "<group>"; };
 		58AAAA0764E1BBED65246336 /* MRAuthService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAuthService.h; sourceTree = "<group>"; };
 		58AAAA1E741133F53A6622CB /* MRRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRRequester.h; sourceTree = "<group>"; };
 		58AAAB099B9968B945DC8BC0 /* HSMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMapView.h; sourceTree = "<group>"; };
 		58AAAB7C17A5ACDCA9C88ECE /* HSClusterMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSClusterMapView.m; sourceTree = "<group>"; };
 		58AAAC789010489B1641366F /* MRClusterRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRClusterRenderer.h; sourceTree = "<group>"; };
 		58AAACED9759CACA69D173ED /* HSClusterMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSClusterMarker.h; sourceTree = "<group>"; };
+		58AAADD1F746AA166A06EF7E /* MRPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRPlace.h; sourceTree = "<group>"; };
 		58AAAE31DE93283EA2E34970 /* MRAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAuthService.m; sourceTree = "<group>"; };
 		58AAAE4D2A0C1656CC7E9FCC /* HSMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMapView.m; sourceTree = "<group>"; };
 		58AAAF02FB0297528A185674 /* MRUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRUserData.m; sourceTree = "<group>"; };
@@ -188,6 +200,8 @@
 				58AAA1C289DD3E0C0833FBB0 /* MRClusterRenderer.m */,
 				58AAA4755749EAE7EB4A7B6B /* HSClusterAlgorithm.h */,
 				58AAA23219A1F08C2B59B9EF /* HSClusterAlgorithm.m */,
+				58AAA07AECBF134D3C1CF286 /* MRPlaceMarker.m */,
+				58AAA329D75367FB048C9B3E /* MRPlaceMarker.h */,
 			);
 			path = HSMapView;
 			sourceTree = "<group>";
@@ -198,8 +212,19 @@
 				3AE975041BEC729F00B1E8A1 /* MRPlacesTableViewController.h */,
 				3AE975051BEC729F00B1E8A1 /* MRPlacesTableViewController.m */,
 				3AE975071BEC72B400B1E8A1 /* places.storyboard */,
+				3A686D9B1BECC7E40015C45B /* MRPlaceTableViewCell.h */,
+				3A686D9C1BECC7E40015C45B /* MRPlaceTableViewCell.m */,
 			);
 			name = places;
+			sourceTree = "<group>";
+		};
+		58AAA742013B484D0AC4C857 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				58AAA503502CE675BC72E9BA /* MRPlace.m */,
+				58AAADD1F746AA166A06EF7E /* MRPlace.h */,
+			);
+			name = entity;
 			sourceTree = "<group>";
 		};
 		58AAA8F9EA83E9A98BEF8F82 /* service */ = {
@@ -243,12 +268,31 @@
 			path = controllers;
 			sourceTree = "<group>";
 		};
+		58AAACC0BD6429A6A5BF78CB /* service */ = {
+			isa = PBXGroup;
+			children = (
+				58AAA7B728E841295EF38C94 /* MRPlaceService.m */,
+				58AAA79D428E7B7D147ECE48 /* MRPlaceService.h */,
+			);
+			name = service;
+			sourceTree = "<group>";
+		};
 		58AAAE7C7B814125CCE6363E /* models */ = {
 			isa = PBXGroup;
 			children = (
 				58AAAB3456C0933DFF515A63 /* user */,
+				58AAAF103D2D2A89E384DC7B /* place */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		58AAAF103D2D2A89E384DC7B /* place */ = {
+			isa = PBXGroup;
+			children = (
+				58AAA742013B484D0AC4C857 /* entity */,
+				58AAACC0BD6429A6A5BF78CB /* service */,
+			);
+			name = place;
 			sourceTree = "<group>";
 		};
 		8058134D43522398DFEC5865 /* Pods */ = {
@@ -386,6 +430,7 @@
 				3AE975031BEC713B00B1E8A1 /* MRTabBarController.m in Sources */,
 				3AE975061BEC729F00B1E8A1 /* MRPlacesTableViewController.m in Sources */,
 				3AE9750B1BEC73D200B1E8A1 /* MRNavigationController.m in Sources */,
+				3A686D9D1BECC7E40015C45B /* MRPlaceTableViewCell.m in Sources */,
 				58AAAC08D8B785A1BA6B1D99 /* MRRequester.m in Sources */,
 				58AAA9848E1899368CB8B2F7 /* MRAppDataProvider.m in Sources */,
 				58AAAD822800ABE5186CA8FC /* MRAuthService.m in Sources */,
@@ -397,6 +442,9 @@
 				58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */,
 				58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */,
 				58AAA4B4ED184AC5BA6706B0 /* MRUserData.m in Sources */,
+				58AAA42E0EE6997787878FDF /* MRPlace.m in Sources */,
+				58AAA26334541FA13B1E628D /* MRPlaceService.m in Sources */,
+				58AAA447CD498EDD539E99A8 /* MRPlaceMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

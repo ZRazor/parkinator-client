@@ -13,7 +13,7 @@
 @property NSString *carColor;
 @property NSString *carModel;
 @property NSString *carNumber;
-@property NSNumber *carType;
+@property NSString *carType;
 @property NSNumber *userId;
 
 + (MRUserData *)loadFromUserDefaults;

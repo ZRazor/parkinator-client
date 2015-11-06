@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *viewTypeSegment;
 @property HSClusterMapView *mapView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstaint;
 
 - (IBAction)viewTypeSegmentChange:(UISegmentedControl *)sender;
 

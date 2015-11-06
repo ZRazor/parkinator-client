@@ -9,6 +9,7 @@
 #define API_SET_USER_DATA @"/user?accessToken=%@"
 #define API_CHANGE_USER_PASS @"/user/password?accessToken=%@"
 #define API_GET_USER_DATA @"/user"
+#define API_GET_ITEM_LIST @"/parking/list"
 
 @interface MRRequester : NSObject
 

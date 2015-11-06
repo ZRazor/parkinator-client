@@ -6,11 +6,13 @@
 #import "MRAppDataProvider.h"
 #import "MRAuthService.h"
 #import "MRUserData.h"
+#import "MRPlaceService.h"
 
 @interface MRAppDataProvider()
 
 @property (readwrite) MRUserData *userData;
 @property (readwrite) MRAuthService *authService;
+@property (readwrite) MRPlaceService *placeService;
 
 @end
 
@@ -30,6 +32,8 @@
     [self setUserData:[MRUserData loadFromUserDefaults]];
     [self setAuthService:[[MRAuthService alloc] init]];
     [_authService setUserData:_userData];
+    [self setPlaceService:[[MRPlaceService alloc] init]];
+    [_placeService setUserData:_userData];
     return self;
 }
 
