@@ -1,0 +1,8 @@
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'MBProgressHUD'
+pod 'SCLAlertView-Objective-C'
+pod 'SZTextView'
+pod 'UIImageViewAligned', :git => 'https://github.com/reydanro/UIImageViewAligned.git'
+pod 'ZeroPush'
+pod 'GoogleMaps'
