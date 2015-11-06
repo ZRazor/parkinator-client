@@ -5,11 +5,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class MRAuthService;
+@class MRUserData;
+
 #define MRAppDataShared [MRAppDataProvider shared]
 
 @interface MRAppDataProvider : NSObject
 
-//@property (nonatomic, strong, readonly) MRAuthService *authService;
+@property (nonatomic, strong, readonly) MRUserData *userData;
+@property (nonatomic, strong, readonly) MRAuthService *authService;
 
 + (MRAppDataProvider *)shared;
 

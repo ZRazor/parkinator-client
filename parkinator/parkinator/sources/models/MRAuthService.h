@@ -5,6 +5,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class MRUserData;
 
 @interface MRAuthService : NSObject
+
+@property MRUserData* userData;
+
+- (void)authWithLogin:(NSString *)login andPassword:(NSString *)password block:(void (^)(NSError *error))block;
+
+- (void)registerWithPhone:(NSString *)phone andCarType:(NSNumber *)carType andCarModel:(NSString *)carModel andCarColor:(NSString *)carColor andCarNumber:(NSString *)carNumber block:(void (^)(NSError *error))block;
+
+
 @end

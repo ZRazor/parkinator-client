@@ -4,10 +4,13 @@
 //
 
 #import "MRAppDataProvider.h"
+#import "MRAuthService.h"
+#import "MRUserData.h"
 
 @interface MRAppDataProvider()
 
-//@property (readwrite) MRAuthService *authService;
+@property (readwrite) MRUserData *userData;
+@property (readwrite) MRAuthService *authService;
 
 @end
 
@@ -24,6 +27,9 @@
 
 - (instancetype)initUniqueInstance {
     self = [super init];
+    [self setUserData:[MRUserData loadFromUserDefaults]];
+    [self setAuthService:[[MRAuthService alloc] init]];
+    [_authService setUserData:_userData];
     return self;
 }
 

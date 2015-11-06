@@ -16,6 +16,7 @@
 		3AE975081BEC72B400B1E8A1 /* places.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE975071BEC72B400B1E8A1 /* places.storyboard */; };
 		3AE9750B1BEC73D200B1E8A1 /* MRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9750A1BEC73D200B1E8A1 /* MRNavigationController.m */; };
 		58AAA49D0A4C20A770E38B0C /* HSMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAE4D2A0C1656CC7E9FCC /* HSMapView.m */; };
+		58AAA4B4ED184AC5BA6706B0 /* MRUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAF02FB0297528A185674 /* MRUserData.m */; };
 		58AAA79F516F004972DEB50E /* HSDistanceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA2DA3ECBAABF494C930F /* HSDistanceUtil.m */; };
 		58AAA8E19A9F1325F3109A63 /* HSClusterMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAB7C17A5ACDCA9C88ECE /* HSClusterMapView.m */; };
 		58AAA9848E1899368CB8B2F7 /* MRAppDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA3B5DAE84726F91860A4 /* MRAppDataProvider.m */; };
@@ -24,6 +25,7 @@
 		58AAAD822800ABE5186CA8FC /* MRAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAE31DE93283EA2E34970 /* MRAuthService.m */; };
 		58AAAE3AA763150EDDA391ED /* HSClusterMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA48ED88DAE097E1885CA /* HSClusterMarker.m */; };
 		58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA23219A1F08C2B59B9EF /* HSClusterAlgorithm.m */; };
+		58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */; };
 		FFD917AD615053263F2D6FC6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEB11FF2269D29A2C30075B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,13 +47,17 @@
 		3AE975091BEC73D200B1E8A1 /* MRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNavigationController.h; sourceTree = "<group>"; };
 		3AE9750A1BEC73D200B1E8A1 /* MRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNavigationController.m; sourceTree = "<group>"; };
 		58AAA1C289DD3E0C0833FBB0 /* MRClusterRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRClusterRenderer.m; sourceTree = "<group>"; };
+		58AAA21BF38EDEFCFB496561 /* MRUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRUserData.h; sourceTree = "<group>"; };
 		58AAA23219A1F08C2B59B9EF /* HSClusterAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSClusterAlgorithm.m; sourceTree = "<group>"; };
 		58AAA232314C8C8012144747 /* HSClusterRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSClusterRenderer.h; sourceTree = "<group>"; };
+		58AAA2D8499FEC2F42ADDEAC /* MRValidateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRValidateUtils.h; sourceTree = "<group>"; };
 		58AAA2DA3ECBAABF494C930F /* HSDistanceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDistanceUtil.m; sourceTree = "<group>"; };
 		58AAA3AFC851399F29B2174F /* MRRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRRequester.m; sourceTree = "<group>"; };
 		58AAA3B5DAE84726F91860A4 /* MRAppDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAppDataProvider.m; sourceTree = "<group>"; };
+		58AAA3BE6E462C849DD5BEAA /* MRError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRError.h; sourceTree = "<group>"; };
 		58AAA4755749EAE7EB4A7B6B /* HSClusterAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSClusterAlgorithm.h; sourceTree = "<group>"; };
 		58AAA48ED88DAE097E1885CA /* HSClusterMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSClusterMarker.m; sourceTree = "<group>"; };
+		58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRValidateUtils.m; sourceTree = "<group>"; };
 		58AAA52B3424B4AF690C4456 /* HSDistanceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDistanceUtil.h; sourceTree = "<group>"; };
 		58AAA569D1DF6BF971BBDCAC /* MRAppDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAppDataProvider.h; sourceTree = "<group>"; };
 		58AAA6B93B17E1A08207A037 /* HSClusterMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSClusterMapView.h; sourceTree = "<group>"; };
@@ -63,6 +69,7 @@
 		58AAACED9759CACA69D173ED /* HSClusterMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSClusterMarker.h; sourceTree = "<group>"; };
 		58AAAE31DE93283EA2E34970 /* MRAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAuthService.m; sourceTree = "<group>"; };
 		58AAAE4D2A0C1656CC7E9FCC /* HSMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMapView.m; sourceTree = "<group>"; };
+		58AAAF02FB0297528A185674 /* MRUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRUserData.m; sourceTree = "<group>"; };
 		8EC38411EA48436A7DCC8F4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +207,8 @@
 			children = (
 				58AAAE31DE93283EA2E34970 /* MRAuthService.m */,
 				58AAAA0764E1BBED65246336 /* MRAuthService.h */,
+				58AAAF02FB0297528A185674 /* MRUserData.m */,
+				58AAA21BF38EDEFCFB496561 /* MRUserData.h */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -209,6 +218,9 @@
 			children = (
 				58AAA3AFC851399F29B2174F /* MRRequester.m */,
 				58AAAA1E741133F53A6622CB /* MRRequester.h */,
+				58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */,
+				58AAA2D8499FEC2F42ADDEAC /* MRValidateUtils.h */,
+				58AAA3BE6E462C849DD5BEAA /* MRError.h */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -383,6 +395,8 @@
 				58AAA8E19A9F1325F3109A63 /* HSClusterMapView.m in Sources */,
 				58AAAD79B0157C11744B3B74 /* MRClusterRenderer.m in Sources */,
 				58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */,
+				58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */,
+				58AAA4B4ED184AC5BA6706B0 /* MRUserData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

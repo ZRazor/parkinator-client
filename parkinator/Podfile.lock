@@ -20,22 +20,26 @@ PODS:
   - AFNetworking/UIKit (2.6.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CocoaSecurity (1.2.4)
   - GoogleMaps (1.10.5)
   - MBProgressHUD (0.9.1)
   - SCLAlertView-Objective-C (0.7.9)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
+  - SVJsonSchemaValidator (0.0.7)
   - SZTextView (1.2.1)
   - UIImageViewAligned (0.0.1)
   - ZeroPush (2.1.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - CocoaSecurity
   - GoogleMaps
   - MBProgressHUD
   - SCLAlertView-Objective-C
   - SDWebImage
+  - SVJsonSchemaValidator
   - SZTextView
   - UIImageViewAligned (from `https://github.com/reydanro/UIImageViewAligned.git`)
   - ZeroPush
@@ -51,10 +55,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  CocoaSecurity: d288a6f87e0f363823d2cb83e753814a6944f71a
   GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   SCLAlertView-Objective-C: e36ab12dc1ec4ff6f932888083b21d71a3a1ad23
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SVJsonSchemaValidator: 3b3425a1d23171ad394f4be8d3139ff839233ce1
   SZTextView: 906df45afd3c1b24fc5252088d5ef8061513c238
   UIImageViewAligned: 73030dd085400e1ae7641203b5cc1546fa0495a8
   ZeroPush: 9632f77e5689bc9402518e9c1ed3688f3a4f42b4
