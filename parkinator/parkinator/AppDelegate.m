@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MRTabBarController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    [GMSServices provideAPIKey:@"AIzaSyC_2rLHivgT7GXJny_48gw-mX6iaTHXwqU"];
 
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     [[self window] setBackgroundColor:[UIColor whiteColor]];
