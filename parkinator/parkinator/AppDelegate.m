@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MRTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
-    
+
+    [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
+    [[self window] setBackgroundColor:[UIColor whiteColor]];
+    [[self window] makeKeyAndVisible];
+
+    MRTabBarController *tabBarController = [[MRTabBarController alloc] init];
+    [[self window] setRootViewController:tabBarController];
+
     return YES;
 }
 
