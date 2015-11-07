@@ -13,6 +13,7 @@
 @property NSString *carColor;
 @property NSString *carModel;
 @property NSString *carNumber;
+@property NSNumber *balance;
 @property NSString *carType;
 @property NSNumber *userId;
 @property NSNumber *curPlace;
