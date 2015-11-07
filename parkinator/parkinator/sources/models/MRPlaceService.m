@@ -15,6 +15,99 @@
 
 }
 
+- (void)createPlaceWithLat:(NSNumber *)lat
+                    andLon:(NSNumber *)lon
+                andCarType:(NSString *)carType
+                  andPrice:(NSNumber *)price
+                andComment:(NSString *)comment
+            andTimeToLeave:(NSNumber *)timeToLeave
+        block:(void (^)(NSError *error))block
+{
+    [MRRequester doPostRequest:API_CREATE_PLACE
+                       params:@{
+                               @"accessToken": [_userData accessToken],
+                               @"lat":lat,
+                               @"lon":lon,
+                               @"carType":carType,
+                               @"price":price,
+                               @"comment":comment,
+                               @"timeToLeave":timeToLeave
+                       }
+                        block:^(id result, NSError *error) {
+                            if (!error) {
+                                NSDictionary *dictionary = (NSDictionary *)result;
+                                if (![dictionary[@"error"] isEqualToString:API_ERROR_SUCCESS]) {
+                                    NSMutableDictionary *errorDetails = [NSMutableDictionary dictionary];
+                                    [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
+                                    error = [NSError errorWithDomain:MRAppDomain code:MRCreatePlaceError userInfo:errorDetails];
+                                }
+                            }
+                            if (error) {
+                                NSLog(@"Create place error:\n%@", [error userInfo]);
+                            }
+                            block(error);
+                        }];
+}
+
+- (void)buyPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error))block
+{
+    [MRRequester doPostRequest:API_BUY_PLACE
+                        params:@{
+                                @"accessToken": [_userData accessToken],
+                                @"id":placeId
+                        }
+                         block:^(id result, NSError *error) {
+                             if (!error) {
+                                 NSDictionary *dictionary = (NSDictionary *)result;
+                                 if (![dictionary[@"error"] isEqualToString:API_ERROR_SUCCESS]) {
+                                     NSMutableDictionary *errorDetails = [NSMutableDictionary dictionary];
+                                     [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
+                                     error = [NSError errorWithDomain:MRAppDomain code:MRBuyPlaceError userInfo:errorDetails];
+                                 }
+                             }
+                             if (error) {
+                                 NSLog(@"Buy place error:\n%@", [error userInfo]);
+                             }
+                             block(error);
+                         }];
+}
+
+- (void)loadPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error, MRPlace *place))block
+{
+    [MRRequester doPostRequest:API_BUY_PLACE
+                        params:@{
+                                @"accessToken": [_userData accessToken],
+                                @"id":placeId
+                        }
+                         block:^(id result, NSError *error) {
+                             MRPlace *place = nil;
+                             if (!error) {
+                                 id schema = [[SVType object]
+                                         properties:@{
+                                                 @"error" : [SVType string],
+                                                 @"msg" : [SVType string],
+                                                 @"data" : [MRPlace jsonSchema]
+                                         }];
+
+                                 id validatedJson = [schema validateJson:result error:&error];
+                                 if (!error) {
+                                     NSDictionary *dictionary = [schema instantiateValidatedJson:validatedJson];
+                                     if (![dictionary[@"error"] isEqualToString:API_ERROR_SUCCESS]) {
+                                         NSMutableDictionary *errorDetails = [NSMutableDictionary dictionary];
+                                         [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
+                                         error = [NSError errorWithDomain:MRAppDomain code:MRLoadPlaceError userInfo:errorDetails];
+                                     } else {
+
+                                     }
+                                 }
+                             }
+                             if (error) {
+                                 NSLog(@"Load place error:\n%@", [error userInfo]);
+                             }
+                             block(error, place);
+                         }];
+}
+
 - (void)loadPlacesWithLat:(NSNumber *)lat
                    andLon:(NSNumber *)lon
                andCarType:(NSString *)carType

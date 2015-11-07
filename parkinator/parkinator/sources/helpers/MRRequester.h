@@ -10,6 +10,8 @@
 #define API_CHANGE_USER_PASS @"/user/password?accessToken=%@"
 #define API_GET_USER_DATA @"/user"
 #define API_GET_ITEM_LIST @"/parking/list"
+#define API_CREATE_PLACE @"/parking/sell"
+#define API_BUY_PLACE @"/parking/buy"
 
 @interface MRRequester : NSObject
 

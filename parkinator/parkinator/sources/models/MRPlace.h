@@ -5,6 +5,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define CAR_TYPE_SMALL @"small"
+#define CAR_TYPE_MIDDLE @"middle"
+#define CAR_TYPE_BIG @"big"
 
 @interface MRPlace : NSObject
 

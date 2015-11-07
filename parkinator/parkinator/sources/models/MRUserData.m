@@ -22,6 +22,7 @@
     [coder encodeObject:_carType forKey:@"carType"];
     [coder encodeObject:_carNumber forKey:@"carNumber"];
     [coder encodeObject:_userId forKey:@"userId"];
+    [coder encodeObject:_curPlace forKey:@"curPlace"];
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
@@ -34,6 +35,7 @@
         _carColor = [coder decodeObjectForKey:@"carColor"];
         _carNumber = [coder decodeObjectForKey:@"carNumber"];
         _userId = [coder decodeObjectForKey:@"userId"];
+        _curPlace = [coder decodeObjectForKey:@"curPlace"];
     }
 
     return self;
@@ -63,6 +65,7 @@
     _carModel = nil;
     _carNumber = nil;
     _userId = nil;
+    _curPlace = nil;
 }
 
 - (void)setFromData:(NSDictionary *)data
@@ -76,6 +79,7 @@
     [self setCarNumber:data[@"carNumber"]];
     [self setCarType:data[@"carType"]];
     [self setPhone:data[@"phone"]];
+    [self setCurPlace:data[@"curPlace"]];
 }
 
 - (void)saveToUserDefaults

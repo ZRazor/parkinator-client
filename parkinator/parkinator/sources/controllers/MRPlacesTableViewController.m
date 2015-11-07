@@ -136,6 +136,7 @@
                                                   if (!error) {
                                                       items = [newItems mutableCopy];
                                                       [self.tableView reloadData];
+                                                      [self.mapView clear];
                                                       for (MRPlace *place in items) {
                                                           MRPlaceMarker *marker = [MRPlaceMarker markerWithPosition:CLLocationCoordinate2DMake([place.lat doubleValue], [place.lon doubleValue])];
                                                           [marker setAppearAnimation:kGMSMarkerAnimationPop];
