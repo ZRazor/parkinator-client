@@ -30,6 +30,7 @@
 		58AAAE3AA763150EDDA391ED /* HSClusterMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA48ED88DAE097E1885CA /* HSClusterMarker.m */; };
 		58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA23219A1F08C2B59B9EF /* HSClusterAlgorithm.m */; };
 		58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */; };
+		746C3ED81BEDB228004A7E01 /* MRCarTypeSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 746C3ED71BEDB228004A7E01 /* MRCarTypeSegmentControl.m */; settings = {ASSET_TAGS = (); }; };
 		74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47E51BED896300B95EC3 /* MRLoginViewController.m */; };
 		74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EB1BED923200B95EC3 /* MRAuthTextField.m */; };
 		74FD47EF1BED935600B95EC3 /* MRSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EE1BED935600B95EC3 /* MRSubmitButton.m */; };
@@ -85,6 +86,8 @@
 		58AAAE31DE93283EA2E34970 /* MRAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAuthService.m; sourceTree = "<group>"; };
 		58AAAE4D2A0C1656CC7E9FCC /* HSMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMapView.m; sourceTree = "<group>"; };
 		58AAAF02FB0297528A185674 /* MRUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRUserData.m; sourceTree = "<group>"; };
+		746C3ED61BEDB228004A7E01 /* MRCarTypeSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRCarTypeSegmentControl.h; path = Viwes/MRCarTypeSegmentControl.h; sourceTree = "<group>"; };
+		746C3ED71BEDB228004A7E01 /* MRCarTypeSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRCarTypeSegmentControl.m; path = Viwes/MRCarTypeSegmentControl.m; sourceTree = "<group>"; };
 		74FD47E41BED896300B95EC3 /* MRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRLoginViewController.h; path = auth/MRLoginViewController.h; sourceTree = "<group>"; };
 		74FD47E51BED896300B95EC3 /* MRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRLoginViewController.m; path = auth/MRLoginViewController.m; sourceTree = "<group>"; };
 		74FD47E81BED8B7200B95EC3 /* MRConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRConsts.h; path = helpers/MRConsts.h; sourceTree = "<group>"; };
@@ -177,6 +180,7 @@
 		58AAA315379595B84DDDC165 /* sources */ = {
 			isa = PBXGroup;
 			children = (
+				746C3ED91BEDB22D004A7E01 /* Views */,
 				58AAAC44935C2CE0725F9A7B /* controllers */,
 				58AAAAE1E09349E7704E5A8A /* helpers */,
 				58AAAE7C7B814125CCE6363E /* models */,
@@ -307,6 +311,15 @@
 			name = place;
 			sourceTree = "<group>";
 		};
+		746C3ED91BEDB22D004A7E01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				746C3ED61BEDB228004A7E01 /* MRCarTypeSegmentControl.h */,
+				746C3ED71BEDB228004A7E01 /* MRCarTypeSegmentControl.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		74FD47E71BED896900B95EC3 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +362,6 @@
 				3AC3873E1BEC6C5700758BBA /* Frameworks */,
 				3AC3873F1BEC6C5700758BBA /* Resources */,
 				B04A6A308C807910FF36E0F3 /* Copy Pods Resources */,
-				1C29922AF6B357052636D4D8 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,21 +418,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C29922AF6B357052636D4D8 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B04A6A308C807910FF36E0F3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,6 +478,7 @@
 				74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */,
 				74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */,
 				58AAA447CD498EDD539E99A8 /* MRPlaceMarker.m in Sources */,
+				746C3ED81BEDB228004A7E01 /* MRCarTypeSegmentControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,7 +583,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = parkinator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mayak.parkinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -599,7 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = parkinator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mayak.parkinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";

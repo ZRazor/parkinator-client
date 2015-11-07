@@ -45,6 +45,10 @@
     [self.view addSubview:bgImaheView];
     [bgImaheView autoPinEdgesToSuperviewEdges];
     
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+
+    
     _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
     [bgImaheView addSubview:_logoView];
     [_logoView autoSetDimensionsToSize:CGSizeMake(80, 80)];
@@ -133,9 +137,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)hideKeyboard
+{
+    [self.view endEditing:YES];
+}
+
 
 - (void)loginAction
 {
+    [[[UIApplication sharedApplication] keyWindow] setRootViewController:[[MRTabBarController alloc] init]];
+    
     [self.view endEditing:YES];
     NSString *phone = [_loginField text];
     NSString *password = [_passField text];

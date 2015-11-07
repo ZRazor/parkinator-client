@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.6.1):
-    - AFNetworking/NSURLConnection (= 2.6.1)
-    - AFNetworking/NSURLSession (= 2.6.1)
-    - AFNetworking/Reachability (= 2.6.1)
-    - AFNetworking/Security (= 2.6.1)
-    - AFNetworking/Serialization (= 2.6.1)
-    - AFNetworking/UIKit (= 2.6.1)
-  - AFNetworking/NSURLConnection (2.6.1):
+  - AFNetworking (2.6.2):
+    - AFNetworking/NSURLConnection (= 2.6.2)
+    - AFNetworking/NSURLSession (= 2.6.2)
+    - AFNetworking/Reachability (= 2.6.2)
+    - AFNetworking/Security (= 2.6.2)
+    - AFNetworking/Serialization (= 2.6.2)
+    - AFNetworking/UIKit (= 2.6.2)
+  - AFNetworking/NSURLConnection (2.6.2):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.1):
+  - AFNetworking/NSURLSession (2.6.2):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.1)
-  - AFNetworking/Security (2.6.1)
-  - AFNetworking/Serialization (2.6.1)
-  - AFNetworking/UIKit (2.6.1):
+  - AFNetworking/Reachability (2.6.2)
+  - AFNetworking/Security (2.6.2)
+  - AFNetworking/Serialization (2.6.2)
+  - AFNetworking/UIKit (2.6.2):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - CocoaSecurity (1.2.4)
@@ -34,7 +34,7 @@ PODS:
   - ZeroPush (2.1.0)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 2.6.2)
   - CocoaSecurity
   - GoogleMaps
   - MBProgressHUD
@@ -56,7 +56,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/reydanro/UIImageViewAligned.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  AFNetworking: 7f317038a9710cabfa43ec56396b307b45df72ab
   CocoaSecurity: d288a6f87e0f363823d2cb83e753814a6944f71a
   GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
@@ -68,4 +68,4 @@ SPEC CHECKSUMS:
   UIImageViewAligned: 73030dd085400e1ae7641203b5cc1546fa0495a8
   ZeroPush: 9632f77e5689bc9402518e9c1ed3688f3a4f42b4
 
-COCOAPODS: 0.39.0
+COCOAPODS: 0.38.2

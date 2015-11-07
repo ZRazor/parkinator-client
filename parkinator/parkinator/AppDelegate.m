@@ -11,6 +11,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "MRLoginViewController.h"
 #import "MRAppDataProvider.h"
+#import "MRConsts.h"
 
 @interface AppDelegate ()
 
@@ -22,11 +23,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [GMSServices provideAPIKey:@"AIzaSyC_2rLHivgT7GXJny_48gw-mX6iaTHXwqU"];
+    
+    [[UINavigationBar appearance] setBarTintColor:mainColor];
+    [[UINavigationBar appearance] setTintColor:orangeColor];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UITabBar appearance] setBarTintColor:mainColor];
+    [[UITabBar appearance] setTintColor:orangeColor];
+    
+    NSDictionary * navBarTitleTextAttributes =
+    @{ NSForegroundColorAttributeName : orangeColor,
+       NSFontAttributeName            : [UIFont systemFontOfSize:21]};
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
 
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     [[self window] setBackgroundColor:[UIColor whiteColor]];
     [[self window] makeKeyAndVisible];
-
+    
     if ([[[MRAppDataProvider shared] userData] isAuthed]) {
         MRTabBarController *tabBarController = [[MRTabBarController alloc] init];
         [[self window] setRootViewController:tabBarController];
@@ -35,8 +48,6 @@
         [[self window] setRootViewController:loginViewController];
     }
     
-
-
     return YES;
 }
 

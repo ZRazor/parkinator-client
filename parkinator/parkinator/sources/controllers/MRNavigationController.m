@@ -7,12 +7,24 @@
 //
 
 #import "MRNavigationController.h"
+#import "MRConsts.h"
 
 @interface MRNavigationController ()
 
 @end
 
 @implementation MRNavigationController
+
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
+{
+    self = [super initWithRootViewController:rootViewController];
+    
+    if (!self) {
+        return nil;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

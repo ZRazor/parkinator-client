@@ -1,4 +1,4 @@
-pod 'AFNetworking'
+pod 'AFNetworking', '~> 2.6.2'
 pod 'SDWebImage'
 pod 'MBProgressHUD'
 pod 'SCLAlertView-Objective-C'
