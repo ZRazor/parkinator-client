@@ -18,9 +18,9 @@
     // Set up the cluster view
     CGFloat widthAndHeight = (30 + 5 * countString.length) * sqrt(MIN(count, 32)) / 2;
     UIView *clusterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, widthAndHeight, widthAndHeight)];
-    clusterView.backgroundColor = [mainColor colorWithAlphaComponent:0.8];
+    clusterView.backgroundColor = [lightMainColor colorWithAlphaComponent:0.9f];
     clusterView.layer.masksToBounds = YES;
-    clusterView.layer.borderColor = [mainColor CGColor];
+    clusterView.layer.borderColor = [lightMainColor CGColor];
     clusterView.layer.borderWidth = 1;
     clusterView.layer.cornerRadius = clusterView.bounds.size.width / 2.0;
 
