@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MRTabBarController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "MRLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,8 +26,11 @@
     [[self window] setBackgroundColor:[UIColor whiteColor]];
     [[self window] makeKeyAndVisible];
 
-    MRTabBarController *tabBarController = [[MRTabBarController alloc] init];
-    [[self window] setRootViewController:tabBarController];
+//    MRTabBarController *tabBarController = [[MRTabBarController alloc] init];
+//    [[self window] setRootViewController:tabBarController];
+    
+    MRLoginViewController *loginViewController = [[MRLoginViewController alloc] init];
+    [[self window] setRootViewController:loginViewController];
 
     return YES;
 }

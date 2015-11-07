@@ -30,6 +30,9 @@
 		58AAAE3AA763150EDDA391ED /* HSClusterMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA48ED88DAE097E1885CA /* HSClusterMarker.m */; };
 		58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA23219A1F08C2B59B9EF /* HSClusterAlgorithm.m */; };
 		58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */; };
+		74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47E51BED896300B95EC3 /* MRLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EB1BED923200B95EC3 /* MRAuthTextField.m */; settings = {ASSET_TAGS = (); }; };
+		74FD47EF1BED935600B95EC3 /* MRSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EE1BED935600B95EC3 /* MRSubmitButton.m */; settings = {ASSET_TAGS = (); }; };
 		FFD917AD615053263F2D6FC6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEB11FF2269D29A2C30075B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,13 @@
 		58AAAE31DE93283EA2E34970 /* MRAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAuthService.m; sourceTree = "<group>"; };
 		58AAAE4D2A0C1656CC7E9FCC /* HSMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMapView.m; sourceTree = "<group>"; };
 		58AAAF02FB0297528A185674 /* MRUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRUserData.m; sourceTree = "<group>"; };
+		74FD47E41BED896300B95EC3 /* MRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRLoginViewController.h; path = auth/MRLoginViewController.h; sourceTree = "<group>"; };
+		74FD47E51BED896300B95EC3 /* MRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRLoginViewController.m; path = auth/MRLoginViewController.m; sourceTree = "<group>"; };
+		74FD47E81BED8B7200B95EC3 /* MRConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRConsts.h; path = helpers/MRConsts.h; sourceTree = "<group>"; };
+		74FD47EA1BED923200B95EC3 /* MRAuthTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRAuthTextField.h; path = auth/MRAuthTextField.h; sourceTree = "<group>"; };
+		74FD47EB1BED923200B95EC3 /* MRAuthTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRAuthTextField.m; path = auth/MRAuthTextField.m; sourceTree = "<group>"; };
+		74FD47ED1BED935600B95EC3 /* MRSubmitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRSubmitButton.h; path = auth/MRSubmitButton.h; sourceTree = "<group>"; };
+		74FD47EE1BED935600B95EC3 /* MRSubmitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRSubmitButton.m; path = auth/MRSubmitButton.m; sourceTree = "<group>"; };
 		8EC38411EA48436A7DCC8F4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +182,7 @@
 				58AAAE7C7B814125CCE6363E /* models */,
 				58AAA3B5DAE84726F91860A4 /* MRAppDataProvider.m */,
 				58AAA569D1DF6BF971BBDCAC /* MRAppDataProvider.h */,
+				74FD47E81BED8B7200B95EC3 /* MRConsts.h */,
 			);
 			path = sources;
 			sourceTree = "<group>";
@@ -264,6 +275,7 @@
 				58AAA0C81A7E1F54790D86E3 /* base */,
 				58AAA6E1AAF279ED1C4F6FDC /* places */,
 				58AAA16822D7AD415F15248F /* settings */,
+				74FD47E71BED896900B95EC3 /* Login */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -295,6 +307,27 @@
 			name = place;
 			sourceTree = "<group>";
 		};
+		74FD47E71BED896900B95EC3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				74FD47E91BED920300B95EC3 /* Views  */,
+				74FD47E41BED896300B95EC3 /* MRLoginViewController.h */,
+				74FD47E51BED896300B95EC3 /* MRLoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		74FD47E91BED920300B95EC3 /* Views  */ = {
+			isa = PBXGroup;
+			children = (
+				74FD47EA1BED923200B95EC3 /* MRAuthTextField.h */,
+				74FD47EB1BED923200B95EC3 /* MRAuthTextField.m */,
+				74FD47ED1BED935600B95EC3 /* MRSubmitButton.h */,
+				74FD47EE1BED935600B95EC3 /* MRSubmitButton.m */,
+			);
+			name = "Views ";
+			sourceTree = "<group>";
+		};
 		8058134D43522398DFEC5865 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +348,6 @@
 				3AC3873D1BEC6C5700758BBA /* Sources */,
 				3AC3873E1BEC6C5700758BBA /* Frameworks */,
 				3AC3873F1BEC6C5700758BBA /* Resources */,
-				19F15E6FEE3249F6D3F27675 /* Embed Pods Frameworks */,
 				B04A6A308C807910FF36E0F3 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -373,21 +405,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19F15E6FEE3249F6D3F27675 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B04A6A308C807910FF36E0F3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,12 +455,15 @@
 				58AAA79F516F004972DEB50E /* HSDistanceUtil.m in Sources */,
 				58AAAE3AA763150EDDA391ED /* HSClusterMarker.m in Sources */,
 				58AAA8E19A9F1325F3109A63 /* HSClusterMapView.m in Sources */,
+				74FD47EF1BED935600B95EC3 /* MRSubmitButton.m in Sources */,
 				58AAAD79B0157C11744B3B74 /* MRClusterRenderer.m in Sources */,
 				58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */,
 				58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */,
 				58AAA4B4ED184AC5BA6706B0 /* MRUserData.m in Sources */,
 				58AAA42E0EE6997787878FDF /* MRPlace.m in Sources */,
 				58AAA26334541FA13B1E628D /* MRPlaceService.m in Sources */,
+				74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */,
+				74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */,
 				58AAA447CD498EDD539E99A8 /* MRPlaceMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +569,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = parkinator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mayak.parkinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -562,6 +583,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = parkinator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mayak.parkinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
