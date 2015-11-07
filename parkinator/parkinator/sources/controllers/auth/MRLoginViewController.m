@@ -145,8 +145,6 @@
 
 - (void)loginAction
 {
-    [[[UIApplication sharedApplication] keyWindow] setRootViewController:[[MRTabBarController alloc] init]];
-    
     [self.view endEditing:YES];
     NSString *phone = [_loginField text];
     NSString *password = [_passField text];
