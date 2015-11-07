@@ -39,8 +39,8 @@
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     [[self window] setBackgroundColor:[UIColor whiteColor]];
     [[self window] makeKeyAndVisible];
-    
-    if ([[[MRAppDataProvider shared] userData] isAuthed]) {
+
+    if ([[MRAppDataShared userData] isAuthed]) {
         MRTabBarController *tabBarController = [[MRTabBarController alloc] init];
         [[self window] setRootViewController:tabBarController];
     } else {

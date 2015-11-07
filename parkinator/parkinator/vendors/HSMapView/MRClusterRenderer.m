@@ -5,6 +5,7 @@
 #import <UIKit/UIKit.h>
 #import <SCLAlertView-Objective-C/SCLMacros.h>
 #import "MRClusterRenderer.h"
+#import "MRConsts.h"
 
 @implementation MRClusterRenderer {
 
@@ -15,18 +16,18 @@
     NSString *countString = [NSString stringWithFormat:@"%d", (int)count];
 
     // Set up the cluster view
-    CGFloat widthAndHeight = (25 + 5 * countString.length) * sqrt(MIN(count, 32)) / 2;
+    CGFloat widthAndHeight = (30 + 5 * countString.length) * sqrt(MIN(count, 32)) / 2;
     UIView *clusterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, widthAndHeight, widthAndHeight)];
-    clusterView.backgroundColor = [UIColorFromHEX(0xd62f2f) colorWithAlphaComponent:0.6];
+    clusterView.backgroundColor = [lightMainColor colorWithAlphaComponent:0.9f];
     clusterView.layer.masksToBounds = YES;
-    clusterView.layer.borderColor = [UIColorFromHEX(0xab2525) CGColor];
+    clusterView.layer.borderColor = [lightMainColor CGColor];
     clusterView.layer.borderWidth = 1;
     clusterView.layer.cornerRadius = clusterView.bounds.size.width / 2.0;
 
     // Add the number label
     UILabel *numberLabel = [[UILabel alloc] initWithFrame:clusterView.frame];
     numberLabel.font = [UIFont fontWithName:@"Helvetica-Neue" size:18];
-    numberLabel.textColor = [UIColor whiteColor];
+    numberLabel.textColor = TEXT_COLOR;
     numberLabel.text = countString;
     numberLabel.textAlignment = NSTextAlignmentCenter;
     [clusterView addSubview:numberLabel];

@@ -114,33 +114,33 @@
                     block:(void (^)(NSError *error, NSArray *items))block
 {
 
-    MRPlace *place1 = [[MRPlace alloc] init];
-    [place1 setAddress:@"Хуй"];
-    [place1 setDist:@120];
-    [place1 setPrice:@500];
-    [place1 setLeaveDt:@11356];
-    [place1 setLat:@43.123];
-    [place1 setLon:@131.922];
-
-    MRPlace *place2 = [[MRPlace alloc] init];
-    [place2 setAddress:@"Хуй 2222"];
-    [place2 setDist:@8000];
-    [place2 setPrice:@777];
-    [place2 setLeaveDt:@17043];
-    [place2 setLat:@43.123];
-    [place2 setLon:@131.912];
-    block(nil, @[
-            place1,
-            place2
-    ]);
-    return;
-
+//    MRPlace *place1 = [[MRPlace alloc] init];
+//    [place1 setAddress:@"Хуй"];
+//    [place1 setDist:@120];
+//    [place1 setPrice:@500];
+//    [place1 setLeaveDt:@11356];
+//    [place1 setLat:@43.123];
+//    [place1 setLon:@131.922];
+//
+//    MRPlace *place2 = [[MRPlace alloc] init];
+//    [place2 setAddress:@"Хуй 2222"];
+//    [place2 setDist:@8000];
+//    [place2 setPrice:@777];
+//    [place2 setLeaveDt:@17043];
+//    [place2 setLat:@43.123];
+//    [place2 setLon:@131.912];
+//    block(nil, @[
+//            place1,
+//            place2
+//    ]);
+//    return;
     [MRRequester doGetRequest:API_GET_ITEM_LIST
                        params:@{
                                @"accessToken": [_userData accessToken],
+                               @"carType":carType,
                                @"lat":lat,
-                               @"lon":lon,
-                               @"carType":carType
+                               @"lon":lon
+
                        }
                         block:^(id result, NSError *error) {
                             NSArray *items = nil;
@@ -166,5 +166,6 @@
                             }
                             block(error, items);
                         }];
+
 }
 @end

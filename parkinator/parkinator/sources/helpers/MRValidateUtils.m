@@ -9,4 +9,16 @@
 @implementation MRValidateUtils {
 
 }
+
++ (id)getSchemaWithData:(NSDictionary *)data {
+    id schema = [[SVType object]
+            properties:@{
+                    @"error" : [SVType string],
+                    @"msg" : [SVType string],
+                    @"data" : [[SVType object] properties:data]
+            }];
+    return schema;
+}
+
+
 @end

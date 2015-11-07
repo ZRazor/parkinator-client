@@ -73,13 +73,16 @@
     if (data[@"accessToken"]) {
         [self setAccessToken:data[@"accessToken"]];
     }
-    [self setUserId:data[@"id"]];
-    [self setCarColor:data[@"carColor"]];
-    [self setCarModel:data[@"carModel"]];
-    [self setCarNumber:data[@"carNumber"]];
-    [self setCarType:data[@"carType"]];
-    [self setPhone:data[@"phone"]];
-    [self setCurPlace:data[@"curPlace"]];
+    if (data[@"user"]) {
+        data = data[@"user"];
+        [self setUserId:data[@"id"]];
+        [self setCarColor:data[@"car_color"]];
+        [self setCarModel:data[@"car_model"]];
+        [self setCarNumber:data[@"car_number"]];
+        [self setCarType:data[@"car_type"]];
+        [self setPhone:data[@"phone"]];
+        [self setCurPlace:data[@"cur_place"]];
+    }
 }
 
 - (void)saveToUserDefaults

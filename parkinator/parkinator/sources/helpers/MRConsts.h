@@ -11,8 +11,9 @@
 
 #define orangeColor [UIColor colorWithRed:0.961f green:0.522f blue:0.137f alpha:1.00f]
 #define mainColor [UIColor colorWithRed:0.165f green:0.122f blue:0.239f alpha:1.00f]
+#define lightMainColor [UIColor colorWithRed:110/255.0 green:83/255.0 blue:184/255.0 alpha:1.0f]
 
-#define textColor [UIColor whiteColor]
+#define TEXT_COLOR [UIColor whiteColor]
 #define fieldColor [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:0.35f]
 
 #endif /* MRConsts_h */
