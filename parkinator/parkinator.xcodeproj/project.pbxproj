@@ -37,6 +37,8 @@
 		74D0784D1BEDD65200AE2EFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D0784C1BEDD65200AE2EFD /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		74D078501BEDDBA400AE2EFD /* MRCarTypeSelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D0784F1BEDDBA400AE2EFD /* MRCarTypeSelectorCell.m */; settings = {ASSET_TAGS = (); }; };
 		74D078551BEDEECC00AE2EFD /* MRMapCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D078541BEDEECC00AE2EFD /* MRMapCellView.m */; settings = {ASSET_TAGS = (); }; };
+		74D078581BEE151900AE2EFD /* MRStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D078571BEE151900AE2EFD /* MRStatusViewController.m */; settings = {ASSET_TAGS = (); }; };
+		74D0785C1BEE157100AE2EFD /* statusView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D0785B1BEE157100AE2EFD /* statusView.storyboard */; settings = {ASSET_TAGS = (); }; };
 		74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47E51BED896300B95EC3 /* MRLoginViewController.m */; };
 		74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EB1BED923200B95EC3 /* MRAuthTextField.m */; };
 		74FD47EF1BED935600B95EC3 /* MRSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EE1BED935600B95EC3 /* MRSubmitButton.m */; };
@@ -105,6 +107,9 @@
 		74D0784F1BEDDBA400AE2EFD /* MRCarTypeSelectorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRCarTypeSelectorCell.m; path = Viwes/MRCarTypeSelectorCell.m; sourceTree = "<group>"; };
 		74D078531BEDEECC00AE2EFD /* MRMapCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRMapCellView.h; path = Viwes/MRMapCellView.h; sourceTree = "<group>"; };
 		74D078541BEDEECC00AE2EFD /* MRMapCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRMapCellView.m; path = Viwes/MRMapCellView.m; sourceTree = "<group>"; };
+		74D078561BEE151900AE2EFD /* MRStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRStatusViewController.h; sourceTree = "<group>"; };
+		74D078571BEE151900AE2EFD /* MRStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRStatusViewController.m; sourceTree = "<group>"; };
+		74D0785B1BEE157100AE2EFD /* statusView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = statusView.storyboard; sourceTree = "<group>"; };
 		74FD47E41BED896300B95EC3 /* MRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRLoginViewController.h; path = auth/MRLoginViewController.h; sourceTree = "<group>"; };
 		74FD47E51BED896300B95EC3 /* MRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRLoginViewController.m; path = auth/MRLoginViewController.m; sourceTree = "<group>"; };
 		74FD47E81BED8B7200B95EC3 /* MRConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRConsts.h; path = helpers/MRConsts.h; sourceTree = "<group>"; };
@@ -318,6 +323,9 @@
 		58AAAC7C9C4B39BDDA165C21 /* status */ = {
 			isa = PBXGroup;
 			children = (
+				74D078561BEE151900AE2EFD /* MRStatusViewController.h */,
+				74D078571BEE151900AE2EFD /* MRStatusViewController.m */,
+				74D0785B1BEE157100AE2EFD /* statusView.storyboard */,
 			);
 			name = status;
 			sourceTree = "<group>";
@@ -480,6 +488,7 @@
 				3AC387541BEC6C5700758BBA /* LaunchScreen.storyboard in Resources */,
 				74D078461BEDCC3000AE2EFD /* addPlace.storyboard in Resources */,
 				74D0784D1BEDD65200AE2EFD /* Assets.xcassets in Resources */,
+				74D0785C1BEE157100AE2EFD /* statusView.storyboard in Resources */,
 				3AE975081BEC72B400B1E8A1 /* places.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +548,7 @@
 				58AAA79F516F004972DEB50E /* HSDistanceUtil.m in Sources */,
 				58AAAE3AA763150EDDA391ED /* HSClusterMarker.m in Sources */,
 				58AAA8E19A9F1325F3109A63 /* HSClusterMapView.m in Sources */,
+				74D078581BEE151900AE2EFD /* MRStatusViewController.m in Sources */,
 				74FD47EF1BED935600B95EC3 /* MRSubmitButton.m in Sources */,
 				58AAAD79B0157C11744B3B74 /* MRClusterRenderer.m in Sources */,
 				74D078421BEDCBE200AE2EFD /* MRCreatePlaceViewController.m in Sources */,

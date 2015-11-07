@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Места-->
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uk0-Tc-Gwo" id="7Kw-mQ-jdo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="ул. Светланская 46" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wto-Ey-JSE">
@@ -108,7 +108,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaD-QW-hUe">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.1215686275" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.29803921568627451" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="eBM-MA-Ere"/>
                                 </constraints>
@@ -131,8 +131,8 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Pjw-3E-HZ0"/>
                                 </items>
-                                <color key="tintColor" red="0.1647058824" green="0.1215686275" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="0.16470588235294117" green="0.12156862745098039" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.29803921570000003" green="0.2156862745" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.29803921568627451" green="0.21568627450980393" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <animations/>
