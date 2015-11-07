@@ -19,6 +19,7 @@
 		58AAA26334541FA13B1E628D /* MRPlaceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA7B728E841295EF38C94 /* MRPlaceService.m */; };
 		58AAA42E0EE6997787878FDF /* MRPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA503502CE675BC72E9BA /* MRPlace.m */; };
 		58AAA447CD498EDD539E99A8 /* MRPlaceMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA07AECBF134D3C1CF286 /* MRPlaceMarker.m */; };
+		58AAA48E9F4ED7E82114951C /* GCGeocodingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA3AE9C062D331EA82884 /* GCGeocodingService.m */; };
 		58AAA49D0A4C20A770E38B0C /* HSMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAE4D2A0C1656CC7E9FCC /* HSMapView.m */; };
 		58AAA4B4ED184AC5BA6706B0 /* MRUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAAF02FB0297528A185674 /* MRUserData.m */; };
 		58AAA79F516F004972DEB50E /* HSDistanceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA2DA3ECBAABF494C930F /* HSDistanceUtil.m */; };
@@ -70,6 +71,7 @@
 		58AAA2D8499FEC2F42ADDEAC /* MRValidateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRValidateUtils.h; sourceTree = "<group>"; };
 		58AAA2DA3ECBAABF494C930F /* HSDistanceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDistanceUtil.m; sourceTree = "<group>"; };
 		58AAA329D75367FB048C9B3E /* MRPlaceMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRPlaceMarker.h; sourceTree = "<group>"; };
+		58AAA3AE9C062D331EA82884 /* GCGeocodingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCGeocodingService.m; sourceTree = "<group>"; };
 		58AAA3AFC851399F29B2174F /* MRRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRRequester.m; sourceTree = "<group>"; };
 		58AAA3B5DAE84726F91860A4 /* MRAppDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAppDataProvider.m; sourceTree = "<group>"; };
 		58AAA3BE6E462C849DD5BEAA /* MRError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRError.h; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		58AAA48ED88DAE097E1885CA /* HSClusterMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSClusterMarker.m; sourceTree = "<group>"; };
 		58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRValidateUtils.m; sourceTree = "<group>"; };
 		58AAA503502CE675BC72E9BA /* MRPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRPlace.m; sourceTree = "<group>"; };
+		58AAA50BBDC80B2F5C6DBF07 /* GCGeocodingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCGeocodingService.h; sourceTree = "<group>"; };
 		58AAA52B3424B4AF690C4456 /* HSDistanceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDistanceUtil.h; sourceTree = "<group>"; };
 		58AAA569D1DF6BF971BBDCAC /* MRAppDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAppDataProvider.h; sourceTree = "<group>"; };
 		58AAA6B93B17E1A08207A037 /* HSClusterMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSClusterMapView.h; sourceTree = "<group>"; };
@@ -284,6 +287,8 @@
 				58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */,
 				58AAA2D8499FEC2F42ADDEAC /* MRValidateUtils.h */,
 				58AAA3BE6E462C849DD5BEAA /* MRError.h */,
+				58AAA50BBDC80B2F5C6DBF07 /* GCGeocodingService.h */,
+				58AAA3AE9C062D331EA82884 /* GCGeocodingService.m */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */,
 				74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */,
 				58AAA447CD498EDD539E99A8 /* MRPlaceMarker.m in Sources */,
+				58AAA48E9F4ED7E82114951C /* GCGeocodingService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
