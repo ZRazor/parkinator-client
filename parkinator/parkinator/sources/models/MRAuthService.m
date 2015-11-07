@@ -10,7 +10,7 @@
 }
 
 - (void)authWithPhone:(NSString *)phone andPassword:(NSString *)password block:(void (^)(NSError *error))block {
-    [MRRequester doPostRequest:API_GET_AUTH_CODE params:@{
+    [MRRequester doGetRequest:API_GET_AUTH_CODE params:@{
             @"phone" : phone
     } block:^(id result, NSError *error) {
         if (!error) {

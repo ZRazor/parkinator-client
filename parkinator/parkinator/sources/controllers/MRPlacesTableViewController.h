@@ -12,7 +12,7 @@
 
 
 @interface MRPlacesTableViewController : UIViewController <UITableViewDelegate,
-        UITableViewDataSource, UIToolbarDelegate, GMSMapViewDelegate, UIBarPositioningDelegate>
+        UITableViewDataSource, UIToolbarDelegate, GMSMapViewDelegate, UIBarPositioningDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *viewTypeSegment;

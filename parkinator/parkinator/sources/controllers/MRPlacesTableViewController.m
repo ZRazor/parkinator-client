@@ -27,12 +27,14 @@
     CLLocationManager *locationManager;
     CGFloat prevZoom;
     BOOL mapShown;
+    BOOL firstLoad;
     NSMutableArray *items;
     NSMutableArray *itemsCopy;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    firstLoad = YES;
 
     [self clearItems];
 
@@ -66,15 +68,26 @@
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDistanceFilter:kCLDistanceFilterNone];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    [locationManager setDelegate:self];
     [locationManager startUpdatingLocation];
-
-    [self loadItemsFromServer];
+    [locationManager requestWhenInUseAuthorization]; // Add This Line
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    if (firstLoad) {
+        firstLoad = NO;
+        [self loadItemsFromServer];
+    }
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -141,7 +154,7 @@
                                                           MRPlaceMarker *marker = [MRPlaceMarker markerWithPosition:CLLocationCoordinate2DMake([place.lat doubleValue], [place.lon doubleValue])];
                                                           [marker setAppearAnimation:kGMSMarkerAnimationPop];
                                                           [marker setPlace:place];
-//                                                              [marker setIcon:[UIImage imageNamed:@"map_marker"]];
+                                                          [marker setIcon:[UIImage imageNamed:@"marker"]];
                                                           [self.mapView addMarker:marker];
                                                       }
                                                       [self.mapView cluster];

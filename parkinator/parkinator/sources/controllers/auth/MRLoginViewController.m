@@ -67,7 +67,7 @@
     [_loginField setBackgroundColor:fieldColor];
     _loginField.userInteractionEnabled = YES;
     bgImaheView.userInteractionEnabled = YES;
-    [_loginField setTextColor:textColor];
+    [_loginField setTextColor:TEXT_COLOR];
     _loginField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Логин" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     _passField = [[MRAuthTextField alloc] init];
@@ -77,7 +77,7 @@
     [_passField autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_loginField withOffset:11];
     [_passField setBackgroundColor:fieldColor];
     _passField.userInteractionEnabled = YES;
-    [_passField setTextColor:textColor];
+    [_passField setTextColor:TEXT_COLOR];
     [_passField setSecureTextEntry:YES];
     _passField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Пароль" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
