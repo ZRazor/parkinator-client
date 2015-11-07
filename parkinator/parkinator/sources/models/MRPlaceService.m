@@ -49,7 +49,7 @@
                         }];
 }
 
-- (void)buyPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error))block
+- (void)buyPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error, NSNumber *newPlaceId))block
 {
     [MRRequester doPostRequest:API_BUY_PLACE
                         params:@{
@@ -57,24 +57,27 @@
                                 @"id":placeId
                         }
                          block:^(id result, NSError *error) {
+                             NSNumber *newPlaceId = nil;
                              if (!error) {
-                                 NSDictionary *dictionary = (NSDictionary *)result;
+                                 NSDictionary *dictionary = (NSDictionary *) result;
                                  if (![dictionary[@"error"] isEqualToString:API_ERROR_SUCCESS]) {
                                      NSMutableDictionary *errorDetails = [NSMutableDictionary dictionary];
                                      [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
                                      error = [NSError errorWithDomain:MRAppDomain code:MRBuyPlaceError userInfo:errorDetails];
+                                 } else {
+                                     newPlaceId = result[@"data"][@"id"];
                                  }
                              }
                              if (error) {
                                  NSLog(@"Buy place error:\n%@", [error userInfo]);
                              }
-                             block(error);
+                             block(error, newPlaceId);
                          }];
 }
 
 - (void)loadPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error, MRPlace *place))block
 {
-    [MRRequester doPostRequest:API_BUY_PLACE
+    [MRRequester doGetRequest:API_LOAD_PLACE
                         params:@{
                                 @"accessToken": [_userData accessToken],
                                 @"id":placeId
@@ -113,34 +116,16 @@
                andCarType:(NSString *)carType
                     block:(void (^)(NSError *error, NSArray *items))block
 {
-
-//    MRPlace *place1 = [[MRPlace alloc] init];
-//    [place1 setAddress:@"Хуй"];
-//    [place1 setDist:@120];
-//    [place1 setPrice:@500];
-//    [place1 setLeaveDt:@11356];
-//    [place1 setLat:@43.123];
-//    [place1 setLon:@131.922];
-//
-//    MRPlace *place2 = [[MRPlace alloc] init];
-//    [place2 setAddress:@"Хуй 2222"];
-//    [place2 setDist:@8000];
-//    [place2 setPrice:@777];
-//    [place2 setLeaveDt:@17043];
-//    [place2 setLat:@43.123];
-//    [place2 setLon:@131.912];
-//    block(nil, @[
-//            place1,
-//            place2
-//    ]);
-//    return;
+//    [MRRequester doGetRequest:[NSString stringWithFormat:API_GET_ITEM_LIST, @"offer"]
+    if (!carType) {
+        carType = CAR_TYPE_BIG;
+    }
     [MRRequester doGetRequest:API_GET_ITEM_LIST
                        params:@{
                                @"accessToken": [_userData accessToken],
                                @"carType":carType,
                                @"lat":lat,
                                @"lon":lon
-
                        }
                         block:^(id result, NSError *error) {
                             NSArray *items = nil;
@@ -168,4 +153,9 @@
                         }];
 
 }
+
+//- (void)sendLocationData
+
+
+
 @end

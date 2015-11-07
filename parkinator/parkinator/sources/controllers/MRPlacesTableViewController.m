@@ -16,6 +16,7 @@
 #import "MRPlace.h"
 #import "MRPlaceMarker.h"
 #import "MRPlaceTableViewCell.h"
+#import "MRPlaceViewController.h"
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
 #import "MRCreatePlaceViewController.h"
 #import "MRNavigationController.h"
@@ -201,6 +202,25 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    MRPlace *place = items[indexPath.row];
+    MRPlaceViewController *placeViewController = [[MRPlaceViewController alloc] init];
+    [placeViewController setPlace:place];
+    [self.navigationController pushViewController:placeViewController animated:YES];
+    return;
+    [MRAppDataShared.placeService loadPlaceWithId:place.id
+                                           block:
+                                                   ^(NSError *error, MRPlace *place) {
+                                                       NSLog(@"buy with");
+                                                   }];
+    return;
+    [MRAppDataShared.placeService buyPlaceWithId:place.id
+    block:
+            ^(NSError *error, NSNumber *number) {
+                NSLog(@"buy with %@", number);
+            }];
+}
 
 /*
 // Override to support conditional editing of the table view.
