@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface MRMapCellView : UITableViewCell
+@interface MRMapCellView : UITableViewCell <GMSMapViewDelegate>
+
+@property GMSMapView *mapView;
+@property UILabel *addressLabel;
+@property UIImageView *markerImageView;
 
 @end

@@ -11,9 +11,9 @@
 #import "MRConsts.h"
 #import "MRSubmitButton.h"
 #import "MRAppDataProvider.h"
-#import "SCLAlertView.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <SCLAlertView-Objective-C/SCLAlertView.h>
 
 @interface MRPlaceViewController ()
 
