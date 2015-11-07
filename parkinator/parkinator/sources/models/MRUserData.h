@@ -15,6 +15,7 @@
 @property NSString *carNumber;
 @property NSString *carType;
 @property NSNumber *userId;
+@property NSNumber *curPlace;
 
 + (MRUserData *)loadFromUserDefaults;
 - (void)saveToUserDefaults;

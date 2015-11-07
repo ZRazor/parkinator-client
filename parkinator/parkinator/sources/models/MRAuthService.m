@@ -9,9 +9,9 @@
 
 }
 
-- (void)authWithLogin:(NSString *)login andPassword:(NSString *)password block:(void (^)(NSError *error))block {
+- (void)authWithPhone:(NSString *)phone andPassword:(NSString *)password block:(void (^)(NSError *error))block {
     [MRRequester doPostRequest:API_GET_AUTH_CODE params:@{
-            @"phone" : login
+            @"phone" : phone
     } block:^(id result, NSError *error) {
         if (!error) {
             id schema = [MRValidateUtils getSchemaWithData:@{}];
@@ -29,7 +29,7 @@
                     md5 = [CocoaSecurity md5:[hashedPass stringByAppendingString:authCode]];
                     hashedPass = [md5 hexLower];
                     [MRRequester doGetRequest:API_GET_ACCESS_TOKEN params:@{
-                            @"phone" : login,
+                            @"phone" : phone,
                             @"pass" : hashedPass
                     }                   block:^(id result, NSError *error) {
                         if (!error) {
@@ -43,7 +43,7 @@
                                 } else {
                                     NSMutableDictionary *errorDetails = [NSMutableDictionary dictionary];
                                     [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
-                                    error = [NSError errorWithDomain:MRAppDomain code:1001 userInfo:errorDetails];
+                                    error = [NSError errorWithDomain:MRAppDomain code:MRLogginError userInfo:errorDetails];
                                 }
                             }
                         }
@@ -71,10 +71,10 @@
                     block:(void (^)(NSError *error))block {
     [MRRequester doPostRequest:API_REGISTER params:@{
             @"phone" : phone,
-            @"car_type" : carType,
-            @"car_model" : carModel,
-            @"car_color" : carColor,
-            @"car_number" : carNumber,
+            @"carType" : carType,
+            @"carModel" : carModel,
+            @"carColor" : carColor,
+            @"carNumber" : carNumber,
     } block:^(id result, NSError *error) {
         if (!error) {
             id schema = [MRValidateUtils getSchemaWithData:@{}];

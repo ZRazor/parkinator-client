@@ -9,12 +9,14 @@
 #define MRAppDomain @"com.mayak.parkinator"
 
 enum {
-    MRLogginError = 1000,
+    MRLogginError = 1001,
     MRRegistrationError,
     MRRemindPasswordError,
     MRUpdateUserDataError,
     MRChangeUserPassError,
     MRGetUserDataError,
-    MRItemActionError,
     MRItemListError,
+    MRCreatePlaceError,
+    MRBuyPlaceError,
+    MRLoadPlaceError
 };
