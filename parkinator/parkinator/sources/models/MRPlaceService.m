@@ -19,6 +19,7 @@
                     andLon:(NSNumber *)lon
                 andCarType:(NSString *)carType
                   andPrice:(NSNumber *)price
+                andAddress:(NSString *)address
                 andComment:(NSString *)comment
             andTimeToLeave:(NSNumber *)timeToLeave
         block:(void (^)(NSError *error))block
@@ -30,6 +31,7 @@
                                @"lon":lon,
                                @"carType":carType,
                                @"price":price,
+                               @"address":address,
                                @"comment":comment,
                                @"timeToLeave":timeToLeave
                        }

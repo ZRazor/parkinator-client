@@ -19,16 +19,16 @@
         return nil;
     }
 
-    UISegmentedControl *carControl = [[UISegmentedControl alloc] initWithItems:@[[UIImage imageNamed:@"small"],
+    _carControl = [[UISegmentedControl alloc] initWithItems:@[[UIImage imageNamed:@"small"],
                                                                                  [UIImage imageNamed:@"medium"],
                                                                                  [UIImage imageNamed:@"big"]]];
-    [carControl setContentMode:UIViewContentModeScaleAspectFill];
+    [_carControl setContentMode:UIViewContentModeScaleAspectFill];
     
 //    UISegmentedControl *carControl = [[UISegmentedControl alloc] initWithItems:@[@"Маленькая", @"Средняя", @"Большая"]];
     
-    [self addSubview:carControl];
+    [self addSubview:_carControl];
     
-    [carControl autoPinEdgesToSuperviewEdges];
+    [_carControl autoPinEdgesToSuperviewEdges];
     
     return self;
 }

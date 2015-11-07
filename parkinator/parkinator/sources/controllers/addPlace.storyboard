@@ -10,7 +10,6 @@
         <!--Create Place View Controller-->
         <scene sceneID="M37-1W-hLz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyb-nf-eDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="placesController" id="CIm-Hq-8pd" customClass="MRCreatePlaceViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="iI5-3w-CHO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -21,7 +20,7 @@
                             <tableViewSection headerTitle="размер парковочного места" id="qg7-jq-IS5">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="47" id="qRy-jW-Aam" customClass="MRCarTypeSelectorCell">
-                                        <rect key="frame" x="0.0" y="49.5" width="600" height="47"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qRy-jW-Aam" id="3vC-VW-dwh">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="46.5"/>
@@ -35,7 +34,7 @@
                             <tableViewSection headerTitle="Время отбытия" id="bOs-2s-MSy">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3pA-51-Wfj">
-                                        <rect key="frame" x="0.0" y="163" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="210.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3pA-51-Wfj" id="ISC-eK-gNA">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -155,10 +154,10 @@
                             <tableViewSection headerTitle="Карта" footerTitle="Установите координы парковочного места" id="tFr-1U-oL3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="220" id="GId-S3-Yfl" customClass="MRMapCellView">
-                                        <rect key="frame" x="0.0" y="273.5" width="600" height="209"/>
+                                        <rect key="frame" x="0.0" y="304.5" width="600" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GId-S3-Yfl" id="hyS-VK-njz">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="208.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="219.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -169,7 +168,7 @@
                             <tableViewSection headerTitle="Цена" id="WWd-M8-Uar" userLabel="Цена">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="CXw-wY-dJZ">
-                                        <rect key="frame" x="0.0" y="527.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="591" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CXw-wY-dJZ" id="wCv-rG-uoB">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -218,8 +217,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Коментарий" id="2cT-GX-nrs" userLabel="Коментарий">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="lgn-4a-JgY">
-                                        <rect key="frame" x="0.0" y="638" width="600" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="lgn-4a-JgY">
+                                        <rect key="frame" x="0.0" y="685" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lgn-4a-JgY" id="3AU-7m-cD6">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
@@ -254,10 +253,10 @@
                             <tableViewSection id="7sa-Pi-4nM" userLabel="Сохранить">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="VWb-6t-H6e">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="821" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VWb-6t-H6e" id="vAl-v8-OpM">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmf-c1-rRV" customClass="MRSubmitButton">
@@ -282,7 +281,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <action selector="addAction:" destination="CIm-Hq-8pd" eventType="touchUpInside" id="uL7-po-HcF"/>
+                                                        <action selector="addPlaceAction:" destination="CIm-Hq-8pd" eventType="touchUpInside" id="Cv4-77-wOi"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -326,9 +325,15 @@
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="carTypeCell" destination="qRy-jW-Aam" id="uCH-Bg-wbP"/>
+                        <outlet property="commentTextView" destination="WQp-Ip-ts8" id="Hob-PK-HjP"/>
+                        <outlet property="mapCell" destination="GId-S3-Yfl" id="Xt4-ls-4Sz"/>
+                        <outlet property="minutesSlider" destination="ogj-29-eSe" id="7Z4-LR-Pos"/>
+                        <outlet property="priceLabel" destination="sHe-Ts-fXA" id="aOO-0Y-e9B"/>
                         <outlet property="timeLabel" destination="l2O-9q-OvH" id="E1v-yc-60s"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyb-nf-eDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="306.75"/>
         </scene>

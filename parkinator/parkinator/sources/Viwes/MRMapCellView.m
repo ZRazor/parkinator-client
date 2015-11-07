@@ -28,6 +28,9 @@
     if (lon == 0)
         lon = 131.9;
 
+    [self setLat:@(lat)];
+    [self setLon:@(lon)];
+
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat
                                                             longitude:lon
                                                                  zoom:14];
@@ -68,6 +71,8 @@
 - (void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)position {
     if (locationDragged) {
         locationDragged = NO;
+        [self setLat:@(position.target.latitude)];
+        [self setLon:@(position.target.longitude)];
         [gs geocodeCoordinate:position.target withCallback:@selector(setAddress) withDelegate:self];
     }
 }

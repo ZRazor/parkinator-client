@@ -10,4 +10,6 @@
 
 @interface UICarTypeSelectorView : UIView
 
+@property UISegmentedControl *carControl;
+
 @end

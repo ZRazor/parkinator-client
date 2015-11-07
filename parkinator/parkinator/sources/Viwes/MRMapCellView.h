@@ -14,5 +14,7 @@
 @property GMSMapView *mapView;
 @property UILabel *addressLabel;
 @property UIImageView *markerImageView;
+@property NSNumber *lat;
+@property NSNumber *lon;
 
 @end
