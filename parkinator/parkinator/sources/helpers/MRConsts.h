@@ -9,7 +9,7 @@
 #ifndef MRConsts_h
 #define MRConsts_h
 
-#define orangeColor [UIColor colorWithRed:0.961f green:0.522f blue:0.137f alpha:1.00f]
+#define orangeColor [UIColor colorWithRed:1.000f green:0.604f blue:0.149f alpha:1.00f]
 #define mainColor [UIColor colorWithRed:0.298f green:0.216f blue:0.431f alpha:1.00f]
 #define lightMainColor [UIColor colorWithRed:110/255.0 green:83/255.0 blue:184/255.0 alpha:1.0f]
 

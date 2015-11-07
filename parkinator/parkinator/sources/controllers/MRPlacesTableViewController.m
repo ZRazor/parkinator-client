@@ -192,13 +192,13 @@
     MRPlace *place = items[indexPath.row];
     [cell.addressLabel setText:place.address];
     [cell.distanceLabel setText:[NSString stringWithFormat:@"%@м", place.dist]];
-    [cell.priceLabel setText:[NSString stringWithFormat:@"%@Р", place.price]];
+    [cell.priceLabel setText:[NSString stringWithFormat:@"%@", place.price]];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:[place.leaveDt longValue]];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"HH:mm"];
     NSString *leaveDtStr = [format stringFromDate:date];
 
-    [cell.timeLabel setText:[NSString stringWithFormat:@"в %@", leaveDtStr]];
+    [cell.timeLabel setText:[NSString stringWithFormat:@"%@", leaveDtStr]];
 
     return cell;
 }

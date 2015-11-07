@@ -51,7 +51,7 @@
     
     _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]];
     [bgImaheView addSubview:_logoView];
-    [_logoView autoSetDimensionsToSize:CGSizeMake(80, 80)];
+    [_logoView autoSetDimensionsToSize:CGSizeMake(200, 98)];
     [_logoView autoAlignAxisToSuperviewAxis:ALAxisVertical];
     logoTopOffset = [_logoView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:60];
     
@@ -72,7 +72,7 @@
     _loginField.userInteractionEnabled = YES;
     bgImaheView.userInteractionEnabled = YES;
     [_loginField setTextColor:TEXT_COLOR];
-    _loginField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Логин" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    _loginField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Телефон" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     _passField = [[MRAuthTextField alloc] init];
     [_buttonsBoxView addSubview:_passField];
@@ -85,7 +85,7 @@
     [_passField setSecureTextEntry:YES];
     _passField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Пароль" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
-    UIImageView *loginIco = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login"]];
+    UIImageView *loginIco = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"phone"]];
     [_loginField addSubview:loginIco];
     [loginIco autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:11];
     [loginIco autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:12];

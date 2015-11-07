@@ -25,13 +25,13 @@
     [GMSServices provideAPIKey:@"AIzaSyC_2rLHivgT7GXJny_48gw-mX6iaTHXwqU"];
     
     [[UINavigationBar appearance] setBarTintColor:mainColor];
-    [[UINavigationBar appearance] setTintColor:orangeColor];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UITabBar appearance] setBarTintColor:mainColor];
-    [[UITabBar appearance] setTintColor:orangeColor];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     
     NSDictionary * navBarTitleTextAttributes =
-    @{ NSForegroundColorAttributeName : orangeColor,
+    @{ NSForegroundColorAttributeName : [UIColor whiteColor],
        NSFontAttributeName            : [UIFont systemFontOfSize:21]};
     
     [[UINavigationBar appearance] setTitleTextAttributes:navBarTitleTextAttributes];
@@ -48,12 +48,9 @@
         [[self window] setRootViewController:loginViewController];
     }
     
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     return YES;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

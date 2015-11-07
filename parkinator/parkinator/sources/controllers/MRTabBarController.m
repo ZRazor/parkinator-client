@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
 
     [self.tabBar setTranslucent:NO];
     [self setExtendedLayoutIncludesOpaqueBars:YES];
@@ -26,12 +28,12 @@
     UIStoryboard *placesStoryboard = [UIStoryboard storyboardWithName:@"places" bundle:nil];
     MRPlacesTableViewController *placesTableViewController = [placesStoryboard instantiateViewControllerWithIdentifier:@"placesController"];
     MRNavigationController *placesNavigationController = [[MRNavigationController alloc] initWithRootViewController:placesTableViewController];
-    [placesNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Места" image:nil selectedImage:nil]];
+    [placesNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Места" image:[UIImage imageNamed:@"list_tab"] selectedImage:nil]];
 
     UIStoryboard *settingsStoryboard = [UIStoryboard storyboardWithName:@"settings" bundle:nil];
     MRSettingsTableViewController *settingsTableViewController = [settingsStoryboard instantiateViewControllerWithIdentifier:@"settingsController"];
     MRNavigationController *settingsNavigationController = [[MRNavigationController alloc] initWithRootViewController:settingsTableViewController];
-    [settingsNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Аккаунт" image:nil selectedImage:nil]];
+    [settingsNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Аккаунт" image:[UIImage imageNamed:@"user_tab"] selectedImage:nil]];
 
     [self setViewControllers:@[
             placesNavigationController,
