@@ -77,6 +77,7 @@
     [locationManager setDelegate:self];
     [locationManager startUpdatingLocation];
     [locationManager requestWhenInUseAuthorization]; // Add This Line
+    MRAppDataShared.locationManager = locationManager;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

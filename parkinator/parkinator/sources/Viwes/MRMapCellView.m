@@ -9,6 +9,7 @@
 #import "MRMapCellView.h"
 #import "MRConsts.h"
 #import "GCGeocodingService.h"
+#import "MRAppDataProvider.h"
 
 @implementation MRMapCellView {
     BOOL locationDragged;
@@ -19,8 +20,16 @@
 
     locationDragged = NO;
     float screenWidth = [[UIScreen mainScreen] bounds].size.width;
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:43.1
-                                                            longitude:131.9
+    CLLocationDegrees lat = MRAppDataShared.locationManager.location.coordinate.latitude;
+    CLLocationDegrees lon = MRAppDataShared.locationManager.location.coordinate.longitude;
+
+    if (lat == 0)
+        lat = 43.1;
+    if (lon == 0)
+        lon = 131.9;
+
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat
+                                                            longitude:lon
                                                                  zoom:14];
     _mapView = [GMSMapView mapWithFrame:CGRectMake(0,0,screenWidth,self.frame.size.height) camera:camera];
     [self addSubview:_mapView];
@@ -42,6 +51,7 @@
     [self addSubview:_addressLabel];
 
     gs = [[GCGeocodingService alloc] init];
+    [gs geocodeCoordinate:camera.target withCallback:@selector(setAddress) withDelegate:self];
 
 }
 

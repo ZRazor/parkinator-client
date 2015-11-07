@@ -8,10 +8,13 @@
 #import "MRUserData.h"
 #import "MRAuthService.h"
 #import "MRPlaceService.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 #define MRAppDataShared [MRAppDataProvider shared]
 
 @interface MRAppDataProvider : NSObject
+
+@property CLLocationManager *locationManager;
 
 @property (nonatomic, strong, readonly) MRUserData *userData;
 @property (nonatomic, strong, readonly) MRAuthService *authService;
