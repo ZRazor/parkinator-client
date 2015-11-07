@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A686D9D1BECC7E40015C45B /* MRPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A686D9C1BECC7E40015C45B /* MRPlaceTableViewCell.m */; };
 		3A686DA21BEDD7540015C45B /* MRPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A686DA11BEDD7540015C45B /* MRPlaceViewController.m */; };
+		3A686DA41BEE20A60015C45B /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A686DA31BEE20A60015C45B /* settings.storyboard */; };
+		3A686DA71BEE22770015C45B /* MRSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A686DA61BEE22770015C45B /* MRSettingsTableViewController.m */; };
 		3AC387461BEC6C5700758BBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC387451BEC6C5700758BBA /* main.m */; };
 		3AC387491BEC6C5700758BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC387481BEC6C5700758BBA /* AppDelegate.m */; };
 		3AC387541BEC6C5700758BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC387521BEC6C5700758BBA /* LaunchScreen.storyboard */; };
@@ -52,6 +54,9 @@
 		3A686D9C1BECC7E40015C45B /* MRPlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRPlaceTableViewCell.m; sourceTree = "<group>"; };
 		3A686DA01BEDD7540015C45B /* MRPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRPlaceViewController.h; sourceTree = "<group>"; };
 		3A686DA11BEDD7540015C45B /* MRPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRPlaceViewController.m; sourceTree = "<group>"; };
+		3A686DA31BEE20A60015C45B /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
+		3A686DA51BEE22770015C45B /* MRSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRSettingsTableViewController.h; sourceTree = "<group>"; };
+		3A686DA61BEE22770015C45B /* MRSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRSettingsTableViewController.m; sourceTree = "<group>"; };
 		3AC387411BEC6C5700758BBA /* parkinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parkinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC387451BEC6C5700758BBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3AC387471BEC6C5700758BBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -195,6 +200,9 @@
 		58AAA16822D7AD415F15248F /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				3A686DA31BEE20A60015C45B /* settings.storyboard */,
+				3A686DA51BEE22770015C45B /* MRSettingsTableViewController.h */,
+				3A686DA61BEE22770015C45B /* MRSettingsTableViewController.m */,
 			);
 			name = settings;
 			sourceTree = "<group>";
@@ -490,6 +498,7 @@
 				74D0784D1BEDD65200AE2EFD /* Assets.xcassets in Resources */,
 				74D0785C1BEE157100AE2EFD /* statusView.storyboard in Resources */,
 				3AE975081BEC72B400B1E8A1 /* places.storyboard in Resources */,
+				3A686DA41BEE20A60015C45B /* settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +570,7 @@
 				58AAA26334541FA13B1E628D /* MRPlaceService.m in Sources */,
 				74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */,
 				74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */,
+				3A686DA71BEE22770015C45B /* MRSettingsTableViewController.m in Sources */,
 				58AAA447CD498EDD539E99A8 /* MRPlaceMarker.m in Sources */,
 				58AAA48E9F4ED7E82114951C /* GCGeocodingService.m in Sources */,
 			);

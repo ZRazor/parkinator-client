@@ -306,7 +306,7 @@
 - (void)mapView:(GMSMapView *)mV didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
     [UIView animateWithDuration:1 //this is the length of time the animation will take
                      animations:^{
-                         self.mapView.frame = self.view.frame;
+                         self.mapView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 40, self.view.frame.size.width, self.view.frame.size.height);
                      }
                      completion:^(BOOL finished){
                          [self.tableView setHidden:YES];
@@ -328,7 +328,7 @@
         itemsCopy = items;
         self.tableViewTopConstaint.constant = 200.0f + 44.0f;
     }
-    self.mapView.frame = self.view.frame;
+    self.mapView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 40, self.view.frame.size.width, self.view.frame.size.height);
     [self.tableView setNeedsLayout];
     [self.tableView reloadData];
 }

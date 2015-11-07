@@ -9,6 +9,7 @@
 #import "MRTabBarController.h"
 #import "MRPlacesTableViewController.h"
 #import "MRNavigationController.h"
+#import "MRSettingsTableViewController.h"
 
 @interface MRTabBarController ()
 
@@ -27,8 +28,14 @@
     MRNavigationController *placesNavigationController = [[MRNavigationController alloc] initWithRootViewController:placesTableViewController];
     [placesNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Места" image:nil selectedImage:nil]];
 
+    UIStoryboard *settingsStoryboard = [UIStoryboard storyboardWithName:@"settings" bundle:nil];
+    MRSettingsTableViewController *settingsTableViewController = [settingsStoryboard instantiateViewControllerWithIdentifier:@"settingsController"];
+    MRNavigationController *settingsNavigationController = [[MRNavigationController alloc] initWithRootViewController:settingsTableViewController];
+    [settingsNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Аккаунт" image:nil selectedImage:nil]];
+
     [self setViewControllers:@[
-            placesNavigationController
+            placesNavigationController,
+            settingsNavigationController
     ]];
 
 
