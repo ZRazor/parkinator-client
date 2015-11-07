@@ -5,9 +5,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class MRAuthService;
-@class MRUserData;
-@class MRPlaceService;
+#import "MRUserData.h"
+#import "MRAuthService.h"
+#import "MRPlaceService.h"
 
 #define MRAppDataShared [MRAppDataProvider shared]
 

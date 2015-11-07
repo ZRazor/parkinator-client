@@ -30,9 +30,9 @@
 		58AAAE3AA763150EDDA391ED /* HSClusterMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA48ED88DAE097E1885CA /* HSClusterMarker.m */; };
 		58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA23219A1F08C2B59B9EF /* HSClusterAlgorithm.m */; };
 		58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */; };
-		74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47E51BED896300B95EC3 /* MRLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EB1BED923200B95EC3 /* MRAuthTextField.m */; settings = {ASSET_TAGS = (); }; };
-		74FD47EF1BED935600B95EC3 /* MRSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EE1BED935600B95EC3 /* MRSubmitButton.m */; settings = {ASSET_TAGS = (); }; };
+		74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47E51BED896300B95EC3 /* MRLoginViewController.m */; };
+		74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EB1BED923200B95EC3 /* MRAuthTextField.m */; };
+		74FD47EF1BED935600B95EC3 /* MRSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EE1BED935600B95EC3 /* MRSubmitButton.m */; };
 		FFD917AD615053263F2D6FC6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEB11FF2269D29A2C30075B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -349,6 +349,7 @@
 				3AC3873E1BEC6C5700758BBA /* Frameworks */,
 				3AC3873F1BEC6C5700758BBA /* Resources */,
 				B04A6A308C807910FF36E0F3 /* Copy Pods Resources */,
+				1C29922AF6B357052636D4D8 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,6 +406,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1C29922AF6B357052636D4D8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B04A6A308C807910FF36E0F3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

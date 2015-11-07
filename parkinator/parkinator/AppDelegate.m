@@ -10,6 +10,7 @@
 #import "MRTabBarController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "MRLoginViewController.h"
+#import "MRAppDataProvider.h"
 
 @interface AppDelegate ()
 
@@ -26,11 +27,15 @@
     [[self window] setBackgroundColor:[UIColor whiteColor]];
     [[self window] makeKeyAndVisible];
 
-//    MRTabBarController *tabBarController = [[MRTabBarController alloc] init];
-//    [[self window] setRootViewController:tabBarController];
+    if ([[[MRAppDataProvider shared] userData] isAuthed]) {
+        MRTabBarController *tabBarController = [[MRTabBarController alloc] init];
+        [[self window] setRootViewController:tabBarController];
+    } else {
+        MRLoginViewController *loginViewController = [[MRLoginViewController alloc] init];
+        [[self window] setRootViewController:loginViewController];
+    }
     
-    MRLoginViewController *loginViewController = [[MRLoginViewController alloc] init];
-    [[self window] setRootViewController:loginViewController];
+
 
     return YES;
 }

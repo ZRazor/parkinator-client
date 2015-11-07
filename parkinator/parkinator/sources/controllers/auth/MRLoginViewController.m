@@ -11,6 +11,10 @@
 #import "MRConsts.h"
 #import "MRAuthTextField.h"
 #import "MRSubmitButton.h"
+#import "MRTabBarController.h"
+#import "MRAppDataProvider.h"
+#import <SCLAlertView-Objective-C/SCLAlertView.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface MRLoginViewController ()
 
@@ -129,9 +133,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (void)loginAction
 {
-
+    [self.view endEditing:YES];
+    NSString *phone = [_loginField text];
+    NSString *password = [_passField text];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[[MRAppDataProvider shared] authService] authWithPhone:phone andPassword:password block:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            [alert showError:self title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
+        } else {
+            [[[UIApplication sharedApplication] keyWindow] setRootViewController:[[MRTabBarController alloc] init]];
+        }
+    }];
 }
 
 - (void)registrationAction
