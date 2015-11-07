@@ -1,5 +1,5 @@
 //
-//  MRCarTypeSegmentControl.h
+//  MRMapCellView.h
 //  parkinator
 //
 //  Created by Mikhail Zinov on 07.11.15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MRCarTypeSegmentControl : UISegmentedControl
+@interface MRMapCellView : UITableViewCell
 
 @end

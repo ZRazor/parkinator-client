@@ -148,8 +148,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Места" id="wvw-RU-x8f">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sm1-dx-2zV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sm1-dx-2zV">
+                            <connections>
+                                <action selector="createPlaceAction:" destination="X9I-mp-Bnz" id="Snx-BQ-fcK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="xPe-yA-rV2" id="2y2-sR-ukr"/>

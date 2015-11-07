@@ -17,6 +17,8 @@
 #import "MRPlaceMarker.h"
 #import "MRPlaceTableViewCell.h"
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
+#import "MRCreatePlaceViewController.h"
+#import "MRNavigationController.h"
 
 @interface MRPlacesTableViewController ()
 
@@ -34,6 +36,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+    
     firstLoad = YES;
 
     [self clearItems];
@@ -306,4 +311,13 @@
     [self.tableView setNeedsLayout];
     [self.tableView reloadData];
 }
+
+- (IBAction)createPlaceAction:(id)sender {
+    MRCreatePlaceViewController  *createViewController = [[UIStoryboard storyboardWithName:@"addPlace" bundle:nil] instantiateViewControllerWithIdentifier:@"placesController"];
+    MRNavigationController *placesNavigationController = [[MRNavigationController alloc] initWithRootViewController:createViewController];
+    [self presentViewController:placesNavigationController animated:YES completion:^{
+        //
+    }];
+}
+
 @end

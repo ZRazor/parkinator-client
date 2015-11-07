@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstaint;
 
 - (IBAction)viewTypeSegmentChange:(UISegmentedControl *)sender;
+- (IBAction)createPlaceAction:(id)sender;
 
 @end

@@ -10,7 +10,6 @@
 		3A686D9D1BECC7E40015C45B /* MRPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A686D9C1BECC7E40015C45B /* MRPlaceTableViewCell.m */; };
 		3AC387461BEC6C5700758BBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC387451BEC6C5700758BBA /* main.m */; };
 		3AC387491BEC6C5700758BBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC387481BEC6C5700758BBA /* AppDelegate.m */; };
-		3AC387511BEC6C5700758BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC387501BEC6C5700758BBA /* Assets.xcassets */; };
 		3AC387541BEC6C5700758BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC387521BEC6C5700758BBA /* LaunchScreen.storyboard */; };
 		3AE975031BEC713B00B1E8A1 /* MRTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE975021BEC713B00B1E8A1 /* MRTabBarController.m */; };
 		3AE975061BEC729F00B1E8A1 /* MRPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE975051BEC729F00B1E8A1 /* MRPlacesTableViewController.m */; };
@@ -30,7 +29,12 @@
 		58AAAE3AA763150EDDA391ED /* HSClusterMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA48ED88DAE097E1885CA /* HSClusterMarker.m */; };
 		58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA23219A1F08C2B59B9EF /* HSClusterAlgorithm.m */; };
 		58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */; };
-		746C3ED81BEDB228004A7E01 /* MRCarTypeSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 746C3ED71BEDB228004A7E01 /* MRCarTypeSegmentControl.m */; settings = {ASSET_TAGS = (); }; };
+		74D078421BEDCBE200AE2EFD /* MRCreatePlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D078411BEDCBE200AE2EFD /* MRCreatePlaceViewController.m */; settings = {ASSET_TAGS = (); }; };
+		74D078461BEDCC3000AE2EFD /* addPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D078451BEDCC3000AE2EFD /* addPlace.storyboard */; settings = {ASSET_TAGS = (); }; };
+		74D0784B1BEDD37600AE2EFD /* UICarTypeSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D0784A1BEDD37600AE2EFD /* UICarTypeSelectorView.m */; settings = {ASSET_TAGS = (); }; };
+		74D0784D1BEDD65200AE2EFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D0784C1BEDD65200AE2EFD /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		74D078501BEDDBA400AE2EFD /* MRCarTypeSelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D0784F1BEDDBA400AE2EFD /* MRCarTypeSelectorCell.m */; settings = {ASSET_TAGS = (); }; };
+		74D078551BEDEECC00AE2EFD /* MRMapCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D078541BEDEECC00AE2EFD /* MRMapCellView.m */; settings = {ASSET_TAGS = (); }; };
 		74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47E51BED896300B95EC3 /* MRLoginViewController.m */; };
 		74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EB1BED923200B95EC3 /* MRAuthTextField.m */; };
 		74FD47EF1BED935600B95EC3 /* MRSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD47EE1BED935600B95EC3 /* MRSubmitButton.m */; };
@@ -46,7 +50,6 @@
 		3AC387451BEC6C5700758BBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3AC387471BEC6C5700758BBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3AC387481BEC6C5700758BBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3AC387501BEC6C5700758BBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AC387531BEC6C5700758BBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AC387551BEC6C5700758BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AE975011BEC713B00B1E8A1 /* MRTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRTabBarController.h; sourceTree = "<group>"; };
@@ -86,8 +89,16 @@
 		58AAAE31DE93283EA2E34970 /* MRAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAuthService.m; sourceTree = "<group>"; };
 		58AAAE4D2A0C1656CC7E9FCC /* HSMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMapView.m; sourceTree = "<group>"; };
 		58AAAF02FB0297528A185674 /* MRUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRUserData.m; sourceTree = "<group>"; };
-		746C3ED61BEDB228004A7E01 /* MRCarTypeSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRCarTypeSegmentControl.h; path = Viwes/MRCarTypeSegmentControl.h; sourceTree = "<group>"; };
-		746C3ED71BEDB228004A7E01 /* MRCarTypeSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRCarTypeSegmentControl.m; path = Viwes/MRCarTypeSegmentControl.m; sourceTree = "<group>"; };
+		74D078401BEDCBE200AE2EFD /* MRCreatePlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCreatePlaceViewController.h; sourceTree = "<group>"; };
+		74D078411BEDCBE200AE2EFD /* MRCreatePlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCreatePlaceViewController.m; sourceTree = "<group>"; };
+		74D078451BEDCC3000AE2EFD /* addPlace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = addPlace.storyboard; sourceTree = "<group>"; };
+		74D078491BEDD37600AE2EFD /* UICarTypeSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UICarTypeSelectorView.h; path = Viwes/UICarTypeSelectorView.h; sourceTree = "<group>"; };
+		74D0784A1BEDD37600AE2EFD /* UICarTypeSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICarTypeSelectorView.m; path = Viwes/UICarTypeSelectorView.m; sourceTree = "<group>"; };
+		74D0784C1BEDD65200AE2EFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74D0784E1BEDDBA400AE2EFD /* MRCarTypeSelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRCarTypeSelectorCell.h; path = Viwes/MRCarTypeSelectorCell.h; sourceTree = "<group>"; };
+		74D0784F1BEDDBA400AE2EFD /* MRCarTypeSelectorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRCarTypeSelectorCell.m; path = Viwes/MRCarTypeSelectorCell.m; sourceTree = "<group>"; };
+		74D078531BEDEECC00AE2EFD /* MRMapCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRMapCellView.h; path = Viwes/MRMapCellView.h; sourceTree = "<group>"; };
+		74D078541BEDEECC00AE2EFD /* MRMapCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRMapCellView.m; path = Viwes/MRMapCellView.m; sourceTree = "<group>"; };
 		74FD47E41BED896300B95EC3 /* MRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRLoginViewController.h; path = auth/MRLoginViewController.h; sourceTree = "<group>"; };
 		74FD47E51BED896300B95EC3 /* MRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRLoginViewController.m; path = auth/MRLoginViewController.m; sourceTree = "<group>"; };
 		74FD47E81BED8B7200B95EC3 /* MRConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRConsts.h; path = helpers/MRConsts.h; sourceTree = "<group>"; };
@@ -133,8 +144,8 @@
 			children = (
 				3AC387471BEC6C5700758BBA /* AppDelegate.h */,
 				3AC387481BEC6C5700758BBA /* AppDelegate.m */,
-				3AC387501BEC6C5700758BBA /* Assets.xcassets */,
 				3AC387521BEC6C5700758BBA /* LaunchScreen.storyboard */,
+				74D0784C1BEDD65200AE2EFD /* Assets.xcassets */,
 				3AC387551BEC6C5700758BBA /* Info.plist */,
 				3AC387441BEC6C5700758BBA /* Supporting Files */,
 				58AAA315379595B84DDDC165 /* sources */,
@@ -276,6 +287,7 @@
 		58AAAC44935C2CE0725F9A7B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				74D0783F1BEDCB7000AE2EFD /* create */,
 				58AAA0C81A7E1F54790D86E3 /* base */,
 				58AAA6E1AAF279ED1C4F6FDC /* places */,
 				58AAA16822D7AD415F15248F /* settings */,
@@ -314,10 +326,40 @@
 		746C3ED91BEDB22D004A7E01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				746C3ED61BEDB228004A7E01 /* MRCarTypeSegmentControl.h */,
-				746C3ED71BEDB228004A7E01 /* MRCarTypeSegmentControl.m */,
+				74D078471BEDD32800AE2EFD /* CreateViews */,
+				74D078491BEDD37600AE2EFD /* UICarTypeSelectorView.h */,
+				74D0784A1BEDD37600AE2EFD /* UICarTypeSelectorView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		74D0783F1BEDCB7000AE2EFD /* create */ = {
+			isa = PBXGroup;
+			children = (
+				74D078401BEDCBE200AE2EFD /* MRCreatePlaceViewController.h */,
+				74D078411BEDCBE200AE2EFD /* MRCreatePlaceViewController.m */,
+				74D078451BEDCC3000AE2EFD /* addPlace.storyboard */,
+			);
+			name = create;
+			sourceTree = "<group>";
+		};
+		74D078471BEDD32800AE2EFD /* CreateViews */ = {
+			isa = PBXGroup;
+			children = (
+				74D078511BEDEE8800AE2EFD /* MapCell */,
+				74D0784E1BEDDBA400AE2EFD /* MRCarTypeSelectorCell.h */,
+				74D0784F1BEDDBA400AE2EFD /* MRCarTypeSelectorCell.m */,
+			);
+			name = CreateViews;
+			sourceTree = "<group>";
+		};
+		74D078511BEDEE8800AE2EFD /* MapCell */ = {
+			isa = PBXGroup;
+			children = (
+				74D078531BEDEECC00AE2EFD /* MRMapCellView.h */,
+				74D078541BEDEECC00AE2EFD /* MRMapCellView.m */,
+			);
+			name = MapCell;
 			sourceTree = "<group>";
 		};
 		74FD47E71BED896900B95EC3 /* Login */ = {
@@ -410,7 +452,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AC387541BEC6C5700758BBA /* LaunchScreen.storyboard in Resources */,
-				3AC387511BEC6C5700758BBA /* Assets.xcassets in Resources */,
+				74D078461BEDCC3000AE2EFD /* addPlace.storyboard in Resources */,
+				74D0784D1BEDD65200AE2EFD /* Assets.xcassets in Resources */,
 				3AE975081BEC72B400B1E8A1 /* places.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,10 +500,12 @@
 			files = (
 				3AC387491BEC6C5700758BBA /* AppDelegate.m in Sources */,
 				3AC387461BEC6C5700758BBA /* main.m in Sources */,
+				74D078501BEDDBA400AE2EFD /* MRCarTypeSelectorCell.m in Sources */,
 				3AE975031BEC713B00B1E8A1 /* MRTabBarController.m in Sources */,
 				3AE975061BEC729F00B1E8A1 /* MRPlacesTableViewController.m in Sources */,
 				3AE9750B1BEC73D200B1E8A1 /* MRNavigationController.m in Sources */,
 				3A686D9D1BECC7E40015C45B /* MRPlaceTableViewCell.m in Sources */,
+				74D0784B1BEDD37600AE2EFD /* UICarTypeSelectorView.m in Sources */,
 				58AAAC08D8B785A1BA6B1D99 /* MRRequester.m in Sources */,
 				58AAA9848E1899368CB8B2F7 /* MRAppDataProvider.m in Sources */,
 				58AAAD822800ABE5186CA8FC /* MRAuthService.m in Sources */,
@@ -470,15 +515,16 @@
 				58AAA8E19A9F1325F3109A63 /* HSClusterMapView.m in Sources */,
 				74FD47EF1BED935600B95EC3 /* MRSubmitButton.m in Sources */,
 				58AAAD79B0157C11744B3B74 /* MRClusterRenderer.m in Sources */,
+				74D078421BEDCBE200AE2EFD /* MRCreatePlaceViewController.m in Sources */,
 				58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */,
 				58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */,
 				58AAA4B4ED184AC5BA6706B0 /* MRUserData.m in Sources */,
 				58AAA42E0EE6997787878FDF /* MRPlace.m in Sources */,
+				74D078551BEDEECC00AE2EFD /* MRMapCellView.m in Sources */,
 				58AAA26334541FA13B1E628D /* MRPlaceService.m in Sources */,
 				74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */,
 				74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */,
 				58AAA447CD498EDD539E99A8 /* MRPlaceMarker.m in Sources */,
-				746C3ED81BEDB228004A7E01 /* MRCarTypeSegmentControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
