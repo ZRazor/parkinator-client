@@ -18,6 +18,9 @@
 @property NSNumber *userId;
 @property NSNumber *curPlace;
 
+@property NSNumber *initiatedContractId;
+@property NSNumber *acceptedContractId;
+
 + (MRUserData *)loadFromUserDefaults;
 - (void)saveToUserDefaults;
 - (BOOL)isAuthed;

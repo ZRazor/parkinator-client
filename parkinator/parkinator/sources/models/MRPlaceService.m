@@ -22,7 +22,7 @@
                 andAddress:(NSString *)address
                 andComment:(NSString *)comment
             andTimeToLeave:(NSNumber *)timeToLeave
-        block:(void (^)(NSError *error))block
+        block:(void (^)(NSError *error, NSNumber *newPlaceId))block
 {
     [MRRequester doPostRequest:API_CREATE_PLACE
                        params:@{
@@ -36,18 +36,21 @@
                                @"timeToLeave":timeToLeave
                        }
                         block:^(id result, NSError *error) {
+                            NSNumber *newPlaceId = nil;
                             if (!error) {
                                 NSDictionary *dictionary = (NSDictionary *)result;
                                 if (![dictionary[@"error"] isEqualToString:API_ERROR_SUCCESS]) {
                                     NSMutableDictionary *errorDetails = [NSMutableDictionary dictionary];
                                     [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
                                     error = [NSError errorWithDomain:MRAppDomain code:MRCreatePlaceError userInfo:errorDetails];
+                                } else {
+                                    newPlaceId = result[@"id"];
                                 }
                             }
                             if (error) {
                                 NSLog(@"Create place error:\n%@", [error userInfo]);
                             }
-                            block(error);
+                            block(error, newPlaceId);
                         }];
 }
 
@@ -77,6 +80,18 @@
                          }];
 }
 
+- (void)sendCoordsWithLat:(NSNumber *)lat andLon:(NSNumber *)lon {
+    [MRRequester doPostRequest:API_SEND_CUR_COORDS
+                        params:@{
+                                @"accessToken": [_userData accessToken],
+                                @"lat":lat,
+                                @"lon":lon
+                        }
+                         block:^(id result, NSError *error) {
+
+                         }];
+}
+
 - (void)loadPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error, MRPlace *place))block
 {
     [MRRequester doGetRequest:API_LOAD_PLACE
@@ -102,7 +117,21 @@
                                          [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
                                          error = [NSError errorWithDomain:MRAppDomain code:MRLoadPlaceError userInfo:errorDetails];
                                      } else {
-
+                                         place = dictionary[@"data"][@"contract"];
+                                         NSDictionary *dictPlace = result[@"data"][@"contract"];
+                                         id persSchema = [MRPerson jsonSchema];
+                                         if (dictPlace[@"initiator"]) {
+                                            id validatedJson = [persSchema validateJson:dictPlace[@"initiator"] error:&error];
+                                            if (!error) {
+                                                [place setInitiator:[persSchema instantiateValidatedJson:validatedJson]];
+                                            }
+                                         }
+                                         if (dictPlace[@"acceptor"]) {
+                                             id validatedJson = [persSchema validateJson:dictPlace[@"acceptor"] error:&error];
+                                             if (!error) {
+                                                 [place setAcceptor:[persSchema instantiateValidatedJson:validatedJson]];
+                                             }
+                                         }
                                      }
                                  }
                              }

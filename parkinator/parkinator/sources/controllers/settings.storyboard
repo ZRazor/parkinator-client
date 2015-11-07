@@ -44,8 +44,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Ваш баланс" id="1Es-9b-koW">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="eDJ-bD-mpO" style="IBUITableViewCellStyleDefault" id="rLu-6p-PtK">
-                                        <rect key="frame" x="0.0" y="209" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="eDJ-bD-mpO" style="IBUITableViewCellStyleDefault" id="rLu-6p-PtK">
+                                        <rect key="frame" x="0.0" y="143.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rLu-6p-PtK" id="Ocu-j7-DCS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
