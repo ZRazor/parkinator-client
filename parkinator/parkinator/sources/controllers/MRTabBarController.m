@@ -10,6 +10,9 @@
 #import "MRPlacesTableViewController.h"
 #import "MRNavigationController.h"
 #import "MRSettingsTableViewController.h"
+#import "MRAppDataProvider.h"
+#import "MRLoginViewController.h"
+#import "MRStatusViewController.h"
 
 @interface MRTabBarController ()
 
@@ -33,10 +36,35 @@
     MRNavigationController *settingsNavigationController = [[MRNavigationController alloc] initWithRootViewController:settingsTableViewController];
     [settingsNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Аккаунт" image:nil selectedImage:nil]];
 
+    UIStoryboard *statusStoryboard = [UIStoryboard storyboardWithName:@"statusView" bundle:nil];
+    MRStatusViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"inititatorController"];
+    MRNavigationController *statusNavigationController = [[MRNavigationController alloc] initWithRootViewController:statusViewController];
+    [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:nil]];
+
+
+
     [self setViewControllers:@[
             placesNavigationController,
+            statusNavigationController,
             settingsNavigationController
     ]];
+
+    [self.tabBar.items[1] setEnabled:NO];
+
+    [[[MRAppDataProvider shared] userData] loadFromServer:^(NSError *error, BOOL invalidToken) {
+        if (invalidToken) {
+            MRLoginViewController *loginViewController = [[MRLoginViewController alloc] init];
+            [[[UIApplication sharedApplication] keyWindow] setRootViewController:loginViewController];
+        } else {
+            if (MRAppDataShared.userData.initiatedContractId) {
+                MRStatusViewController *statusViewController = ((MRNavigationController *)self.viewControllers[1]).visibleViewController;
+                [statusViewController setContractId:MRAppDataShared.userData.initiatedContractId];
+                [self.tabBar.items[1] setEnabled:YES];
+            }
+        }
+    }];
+
+//    if ()
 
 
 }

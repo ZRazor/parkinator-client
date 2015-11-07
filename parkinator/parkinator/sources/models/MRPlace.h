@@ -4,6 +4,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MRPerson.h"
+
 
 #define CAR_TYPE_SMALL @"small"
 #define CAR_TYPE_MIDDLE @"middle"
@@ -24,6 +26,8 @@
 @property NSNumber *lon;
 @property NSNumber *dist;
 @property NSNumber *leaveDt;
+@property MRPerson *initiator;
+@property MRPerson *acceptor;
 
 + (NSString *)getOrmKey;
 

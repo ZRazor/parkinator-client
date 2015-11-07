@@ -13,9 +13,11 @@
 
 @property MRUserData *userData;
 
-- (void)createPlaceWithLat:(NSNumber *)lat andLon:(NSNumber *)lon andCarType:(NSString *)carType andPrice:(NSNumber *)price andAddress:(NSString *)address andComment:(NSString *)comment andTimeToLeave:(NSNumber *)timeToLeave block:(void (^)(NSError *error))block;
+- (void)createPlaceWithLat:(NSNumber *)lat andLon:(NSNumber *)lon andCarType:(NSString *)carType andPrice:(NSNumber *)price andAddress:(NSString *)address andComment:(NSString *)comment andTimeToLeave:(NSNumber *)timeToLeave block:(void (^)(NSError *, NSNumber *))block;
 
 - (void)buyPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *, NSNumber *))block;
+
+- (void)sendCoordsWithLat:(NSNumber *)lat andLon:(NSNumber *)lon;
 
 - (void)loadPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error, MRPlace *place))block;
 

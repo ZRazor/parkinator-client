@@ -10,4 +10,9 @@
 
 @interface MRStatusViewController : UITableViewController
 
+@property NSNumber *contractId;
+
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *otherPlaceInfoLabel;
+
 @end

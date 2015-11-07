@@ -14,6 +14,8 @@
 #import "MRMapCellView.h"
 #import "MRSubmitButton.h"
 #import "SCLAlertView.h"
+#import "MRNavigationController.h"
+#import "MRStatusViewController.h"
 
 @implementation MRCreatePlaceViewController
 {
@@ -83,15 +85,17 @@
     andComment:self.commentTextView.text
     andTimeToLeave:@((int)self.minutesSlider.value)
     block:
-            ^(NSError *error) {
+            ^(NSError *error, NSNumber *newPlaceId) {
                 [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
                 if (error) {
                     NSLog(@"%@", [error localizedDescription]);
                     SCLAlertView *newAlert = [[SCLAlertView alloc] init];
                     [newAlert showError:self.tabBarController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
                 } else {
+                    [MRAppDataShared.authService.userData setInitiatedContractId:newPlaceId];
+                    [MRAppDataShared.authService.userData saveToUserDefaults];
                     [self dismissViewControllerAnimated:YES completion:^{
-                        //
+                        //TODO !!!
                     }];
                 }
             }];

@@ -4,6 +4,7 @@
 //
 
 #import <CocoaSecurity/CocoaSecurity.h>
+#import <SVJsonSchemaValidator/SVType.h>
 #import "MRUserData.h"
 #import "MRRequester.h"
 #import "MRValidateUtils.h"
@@ -24,6 +25,8 @@
     [coder encodeObject:_userId forKey:@"userId"];
     [coder encodeObject:_curPlace forKey:@"curPlace"];
     [coder encodeObject:_balance forKey:@"balance"];
+    [coder encodeObject:_initiatedContractId forKey:@"initiatedContractId"];
+    [coder encodeObject:_acceptedContractId forKey:@"acceptedContractId"];
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
@@ -38,6 +41,8 @@
         _userId = [coder decodeObjectForKey:@"userId"];
         _curPlace = [coder decodeObjectForKey:@"curPlace"];
         _balance = [coder decodeObjectForKey:@"balance"];
+        _initiatedContractId = [coder decodeObjectForKey:@"initiatedContractId"];
+        _acceptedContractId = [coder decodeObjectForKey:@"acceptedContractId"];
     }
 
     return self;
@@ -69,6 +74,8 @@
     _userId = nil;
     _curPlace = nil;
     _balance = nil;
+    _initiatedContractId = nil;
+    _acceptedContractId = nil;
 }
 
 - (void)setFromData:(NSDictionary *)data
@@ -79,13 +86,15 @@
     if (data[@"user"]) {
         data = data[@"user"];
         [self setUserId:data[@"id"]];
-        [self setCarColor:data[@"car_color"]];
-        [self setCarModel:data[@"car_model"]];
-        [self setCarNumber:data[@"car_number"]];
-        [self setCarType:data[@"car_type"]];
+        [self setCarColor:data[@"carColor"]];
+        [self setCarModel:data[@"carModel"]];
+        [self setCarNumber:data[@"carNumber"]];
+        [self setCarType:data[@"carType"]];
         [self setPhone:data[@"phone"]];
-        [self setCurPlace:data[@"cur_place"]];
+        [self setCurPlace:data[@"curPlace"]];
         [self setBalance:data[@"balance"]];
+        [self setInitiatedContractId:data[@"initiatedContractId"]];
+        [self setAcceptedContractId:data[@"acceptedContractId"]];
     }
 }
 
