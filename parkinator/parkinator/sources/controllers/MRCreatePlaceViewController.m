@@ -36,6 +36,22 @@
     [super viewDidLoad];
     [self setNeedsStatusBarAppearanceUpdate];
     [self setTitle:@"Добавить место"];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+}
+
+- (void)cancelAction
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        //
+    }];
+}
+
+- (IBAction)addAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        //
+    }];
 }
 
 @end

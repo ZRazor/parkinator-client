@@ -18,7 +18,7 @@
     [_carSegment autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10.0f];
     [_carSegment autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10.0f];
     [_carSegment autoAlignAxisToSuperviewAxis:ALAxisVertical];
-    [_carSegment autoSetDimension:ALDimensionWidth toSize:200];
+    [_carSegment autoSetDimension:ALDimensionWidth toSize:280];
     
     [_carSegment setTintColor:mainColor];
 }
