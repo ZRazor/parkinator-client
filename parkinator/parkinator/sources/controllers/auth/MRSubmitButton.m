@@ -19,10 +19,22 @@
         return nil;
     }
     
+    [self setStyle];
+    
+    return self;
+}
+
+- (void)setStyle {
     [self setBackgroundColor:orangeColor];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.titleLabel setFont:[UIFont systemFontOfSize:18]];
-    
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+
+    [self setStyle];
+
     return self;
 }
 
