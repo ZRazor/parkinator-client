@@ -9,6 +9,7 @@
         <!--Create Place View Controller-->
         <scene sceneID="M37-1W-hLz">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyb-nf-eDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="placesController" id="CIm-Hq-8pd" customClass="MRCreatePlaceViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="iI5-3w-CHO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -16,7 +17,7 @@
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Тип авто" footerTitle="Выберите тип автомобиля. От типа авто, завистит размер парковочного места" id="qg7-jq-IS5">
+                            <tableViewSection headerTitle="размер парковочного места" id="qg7-jq-IS5">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="47" id="qRy-jW-Aam" customClass="MRCarTypeSelectorCell">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -28,7 +29,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Время отьебытия" footerTitle="Через какое врямя вы планируете съебать" id="bOs-2s-MSy">
+                            <tableViewSection headerTitle="Время отбытия" id="bOs-2s-MSy">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3pA-51-Wfj">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -160,7 +161,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection footerTitle="Оставьте дополнительную информацию, если это необходимо" id="WWd-M8-Uar" userLabel="Цена">
+                            <tableViewSection headerTitle="Цена" id="WWd-M8-Uar" userLabel="Цена">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CXw-wY-dJZ">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
@@ -169,7 +170,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Цена" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHe-Ts-fXA">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHe-Ts-fXA">
                                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -245,17 +246,84 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="7sa-Pi-4nM" userLabel="Сохранить">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="VWb-6t-H6e">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VWb-6t-H6e" id="vAl-v8-OpM">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmf-c1-rRV" customClass="MRSubmitButton">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.96078431369999995" green="0.52156862749999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="280" id="Nu5-CL-T3B"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Добавить">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Nu5-CL-T3B"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Nu5-CL-T3B"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="addAction:" destination="CIm-Hq-8pd" eventType="touchUpInside" id="uL7-po-HcF"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="pmf-c1-rRV" firstAttribute="top" secondItem="vAl-v8-OpM" secondAttribute="topMargin" constant="2" id="42d-hM-bZw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pmf-c1-rRV" secondAttribute="bottom" constant="1" id="5Hl-dq-pDy"/>
+                                                <constraint firstItem="pmf-c1-rRV" firstAttribute="centerX" secondItem="vAl-v8-OpM" secondAttribute="centerX" id="9Pi-3B-scr"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="pmf-c1-rRV"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="42d-hM-bZw"/>
+                                                    <exclude reference="5Hl-dq-pDy"/>
+                                                    <exclude reference="9Pi-3B-scr"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="pmf-c1-rRV"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="42d-hM-bZw"/>
+                                                    <include reference="5Hl-dq-pDy"/>
+                                                    <include reference="9Pi-3B-scr"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="CIm-Hq-8pd" id="x19-9D-Pnx"/>
                             <outlet property="delegate" destination="CIm-Hq-8pd" id="Wtq-RM-rhO"/>
                         </connections>
                     </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="timeLabel" destination="l2O-9q-OvH" id="E1v-yc-60s"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyb-nf-eDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="307.5"/>
         </scene>

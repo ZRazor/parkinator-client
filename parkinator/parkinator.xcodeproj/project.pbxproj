@@ -30,7 +30,6 @@
 		58AAAE3AA763150EDDA391ED /* HSClusterMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA48ED88DAE097E1885CA /* HSClusterMarker.m */; };
 		58AAAF25D61EBBAEC4C800B4 /* HSClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA23219A1F08C2B59B9EF /* HSClusterAlgorithm.m */; };
 		58AAAFD2FF842382710FE467 /* MRValidateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAA4D5C6FC961E9AB97403 /* MRValidateUtils.m */; };
-		746C3ED81BEDB228004A7E01 /* MRCarTypeSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 746C3ED71BEDB228004A7E01 /* MRCarTypeSegmentControl.m */; };
 		74D078421BEDCBE200AE2EFD /* MRCreatePlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D078411BEDCBE200AE2EFD /* MRCreatePlaceViewController.m */; settings = {ASSET_TAGS = (); }; };
 		74D078461BEDCC3000AE2EFD /* addPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D078451BEDCC3000AE2EFD /* addPlace.storyboard */; settings = {ASSET_TAGS = (); }; };
 		74D0784B1BEDD37600AE2EFD /* UICarTypeSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D0784A1BEDD37600AE2EFD /* UICarTypeSelectorView.m */; settings = {ASSET_TAGS = (); }; };
@@ -426,7 +425,6 @@
 				3AC3873E1BEC6C5700758BBA /* Frameworks */,
 				3AC3873F1BEC6C5700758BBA /* Resources */,
 				B04A6A308C807910FF36E0F3 /* Copy Pods Resources */,
-				5FEC66EBD9F349AE96523106 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -484,21 +482,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5FEC66EBD9F349AE96523106 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B04A6A308C807910FF36E0F3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
