@@ -30,7 +30,7 @@
 
     [self loadDataFromServer:YES];
 
-    timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(reloadInfo) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reloadInfo) userInfo:nil repeats:YES];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
