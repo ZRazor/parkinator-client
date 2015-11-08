@@ -72,6 +72,7 @@
     _loginField.userInteractionEnabled = YES;
     bgImaheView.userInteractionEnabled = YES;
     [_loginField setTextColor:TEXT_COLOR];
+    [_loginField setKeyboardType:UIKeyboardTypeNumberPad];
     _loginField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Телефон" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     _passField = [[MRAuthTextField alloc] init];
