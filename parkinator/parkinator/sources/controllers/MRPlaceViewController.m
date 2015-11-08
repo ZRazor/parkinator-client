@@ -103,8 +103,8 @@
     [scrollView addSubview:commentLabel];
     [self resizeHeightForLabel:commentLabel];
 
-    float x = (screenWidth - 200) / 2;
-    buyButton = [[MRSubmitButton alloc] initWithFrame:CGRectMake(x, 270 + commentLabel.frame.size.height + 30, 200, 40)];
+    float x = (screenWidth - 280) / 2;
+    buyButton = [[MRSubmitButton alloc] initWithFrame:CGRectMake(x, 270 + commentLabel.frame.size.height + 30, 280, 40)];
     [buyButton setTitle:@"Купить" forState:UIControlStateNormal];
     [scrollView addSubview:buyButton];
     [buyButton addTarget:self action:@selector(buyAction) forControlEvents:UIControlEventTouchUpInside];

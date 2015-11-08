@@ -8,6 +8,7 @@
 
 #import "MRSubmitButton.h"
 #import "MRConsts.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation MRSubmitButton
 
@@ -28,6 +29,8 @@
     [self setBackgroundColor:orangeColor];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.titleLabel setFont:[UIFont systemFontOfSize:18]];
+    [self.layer setCornerRadius:2.0f];
+    [self setClipsToBounds:YES];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {

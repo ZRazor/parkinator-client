@@ -21,7 +21,7 @@
     [super viewDidLoad];
 
     [_phoneLabel setText:MRAppDataShared.userData.phone];
-    [_balanceLabel setText:[NSString stringWithFormat:@"%@Р", MRAppDataShared.userData.balance]];
+    [_balanceLabel setText:[NSString stringWithFormat:@"%@", MRAppDataShared.userData.balance]];
     [_carModelLabel setText:MRAppDataShared.userData.carModel];
     [_carColorLabel setText:MRAppDataShared.userData.carColor];
     [_carNumberLabel setText:MRAppDataShared.userData.carNumber];

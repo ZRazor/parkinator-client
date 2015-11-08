@@ -59,6 +59,9 @@
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
     self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
 }
 
 - (void)cancelAction
@@ -66,6 +69,11 @@
     [self dismissViewControllerAnimated:YES completion:^{
         //
     }];
+}
+
+- (void)hideKeyboard
+{
+    [self.view endEditing:YES];
 }
 
 - (IBAction)addPlaceAction:(MRSubmitButton *)sender {

@@ -40,13 +40,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="ogj-29-eSe">
-                                                    <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                                    <animations/>
-                                                    <connections>
-                                                        <action selector="changeTimeValue:" destination="CIm-Hq-8pd" eventType="valueChanged" id="1nN-wF-YKJ"/>
-                                                    </connections>
-                                                </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="мин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCc-jM-L5j">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <animations/>
@@ -95,6 +88,14 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="ogj-29-eSe">
+                                                    <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                                    <animations/>
+                                                    <color key="tintColor" red="0.29803921570000003" green="0.2156862745" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="changeTimeValue:" destination="CIm-Hq-8pd" eventType="valueChanged" id="1nN-wF-YKJ"/>
+                                                    </connections>
+                                                </slider>
                                             </subviews>
                                             <animations/>
                                             <constraints>
@@ -112,9 +113,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
-                                                    <exclude reference="ogj-29-eSe"/>
                                                     <exclude reference="sCc-jM-L5j"/>
                                                     <exclude reference="l2O-9q-OvH"/>
+                                                    <exclude reference="ogj-29-eSe"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="ism-eh-EWX"/>
@@ -130,9 +131,9 @@
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
-                                                    <include reference="ogj-29-eSe"/>
                                                     <include reference="sCc-jM-L5j"/>
                                                     <include reference="l2O-9q-OvH"/>
+                                                    <include reference="ogj-29-eSe"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="ism-eh-EWX"/>
