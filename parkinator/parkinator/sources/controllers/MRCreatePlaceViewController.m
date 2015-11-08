@@ -15,7 +15,8 @@
 #import "MRSubmitButton.h"
 #import "SCLAlertView.h"
 #import "MRNavigationController.h"
-#import "MRStatusViewController.h"
+#import "MRInititatorStatusViewController.h"
+#import "MRTabBarController.h"
 
 @implementation MRCreatePlaceViewController
 {
@@ -95,7 +96,7 @@
                     [MRAppDataShared.authService.userData setInitiatedContractId:newPlaceId];
                     [MRAppDataShared.authService.userData saveToUserDefaults];
                     [self dismissViewControllerAnimated:YES completion:^{
-                        //TODO !!!
+                        [MRAppDataShared setInititator:newPlaceId];
                     }];
                 }
             }];

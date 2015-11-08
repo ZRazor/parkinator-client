@@ -17,6 +17,8 @@
 
 - (void)buyPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *, NSNumber *))block;
 
+- (void)removePlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error))block;
+
 - (void)sendCoordsWithLat:(NSNumber *)lat andLon:(NSNumber *)lon;
 
 - (void)loadPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error, MRPlace *place))block;

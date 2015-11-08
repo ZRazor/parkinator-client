@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class MRSubmitButton;
+
 @interface MRSettingsTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 
@@ -16,4 +18,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *carColorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *carNumberLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *carTypeImageView;
+- (IBAction)logoutAction:(MRSubmitButton *)sender;
 @end

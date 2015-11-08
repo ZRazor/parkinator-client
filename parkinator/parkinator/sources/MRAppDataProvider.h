@@ -10,17 +10,22 @@
 #import "MRPlaceService.h"
 #import <GoogleMaps/GoogleMaps.h>
 
+@class MRTabBarController;
+
 #define MRAppDataShared [MRAppDataProvider shared]
 
 @interface MRAppDataProvider : NSObject
 
 @property CLLocationManager *locationManager;
+@property MRTabBarController *tabBarController;
 
 @property (nonatomic, strong, readonly) MRUserData *userData;
 @property (nonatomic, strong, readonly) MRAuthService *authService;
 @property (nonatomic, strong, readonly) MRPlaceService *placeService;
 
 + (MRAppDataProvider *)shared;
+
+- (void)setInititator:(NSNumber *)placeId;
 
 // clue for improper use (produces compile time error)
 + (instancetype)alloc __attribute__((unavailable("alloc not available, call shared instead")));

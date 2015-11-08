@@ -13,8 +13,9 @@
 //#define API_GET_ITEM_LIST @"/parking/list/%@"
 #define API_CREATE_PLACE @"/parking/suggest/offer"
 #define API_BUY_PLACE @"/parking/confirm/offer"
-#define API_LOAD_PLACE @"/parking/contract"
+#define API_LOAD_PLACE @"/parking/show"
 #define API_SEND_CUR_COORDS @"/user/set/position"
+#define API_DELETE_PLACE @"/parking/delete"
 
 @interface MRRequester : NSObject
 

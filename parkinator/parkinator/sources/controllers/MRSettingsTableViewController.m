@@ -8,6 +8,8 @@
 
 #import "MRSettingsTableViewController.h"
 #import "MRAppDataProvider.h"
+#import "MRSubmitButton.h"
+#import "MRLoginViewController.h"
 
 @interface MRSettingsTableViewController ()
 
@@ -24,6 +26,7 @@
     [_carColorLabel setText:MRAppDataShared.userData.carColor];
     [_carNumberLabel setText:MRAppDataShared.userData.carNumber];
     [_carTypeImageView setImage:[UIImage imageNamed:MRAppDataShared.userData.carType]];
+    [self.tableView reloadData];
 
     
     // Uncomment the following line to preserve selection between presentations.
@@ -93,4 +96,9 @@
 }
 */
 
+- (IBAction)logoutAction:(MRSubmitButton *)sender {
+    [[[MRAppDataProvider shared] userData] clearData];
+    [[[MRAppDataProvider shared] userData] saveToUserDefaults];
+    [[[UIApplication sharedApplication] keyWindow] setRootViewController:[[MRLoginViewController alloc] init]];
+}
 @end

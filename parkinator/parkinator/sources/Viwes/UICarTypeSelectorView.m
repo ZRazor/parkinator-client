@@ -20,7 +20,7 @@
     }
 
     _carControl = [[UISegmentedControl alloc] initWithItems:@[[UIImage imageNamed:@"small"],
-                                                                                 [UIImage imageNamed:@"medium"],
+                                                                                 [UIImage imageNamed:@"middle"],
                                                                                  [UIImage imageNamed:@"big"]]];
     [_carControl setContentMode:UIViewContentModeScaleAspectFill];
     
