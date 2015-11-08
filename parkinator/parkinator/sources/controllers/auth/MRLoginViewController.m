@@ -86,7 +86,7 @@
     [_passField setSecureTextEntry:YES];
     _passField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Пароль" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
-    UIImageView *loginIco = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"phone"]];
+    UIImageView *loginIco = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"phone-white"]];
     [_loginField addSubview:loginIco];
     [loginIco autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:11];
     [loginIco autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:12];

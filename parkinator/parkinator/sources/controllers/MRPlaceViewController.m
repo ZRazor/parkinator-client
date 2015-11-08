@@ -39,8 +39,8 @@
     [scrollView setBackgroundColor:[UIColor whiteColor]];
     [scrollView setAlwaysBounceVertical:NO];
 
-//    [self setTitle:@"Место"];
-    [self setTitle:[_place address]];
+    [self setTitle:@"Место"];
+//    [self setTitle:[_place address]];
 
     [self setView:scrollView];
 
@@ -57,7 +57,7 @@
 
     [scrollView addSubview:mapView];
 
-    UIView *blackView = [[UIView alloc] initWithFrame:CGRectMake(0, mapView.frame.size.height - 3, screenWidth, 3)];
+    UIView *blackView = [[UIView alloc] initWithFrame:CGRectMake(0, mapView.frame.size.height - 30, screenWidth, 30)];
     [blackView setBackgroundColor:mainColor];
     [scrollView addSubview:blackView];
 
@@ -65,24 +65,24 @@
     [addressLabel setTextColor:[UIColor whiteColor]];
     [addressLabel setText:_place.address];
     [addressLabel setTextAlignment:NSTextAlignmentCenter];
-//    [scrollView addSubview:addressLabel];
+    [scrollView addSubview:addressLabel];
     
-    UIImageView *priceView = [[UIImageView alloc] initWithFrame:CGRectMake(screenWidth - 30, 225, 15, 15)];
+    UIImageView *priceView = [[UIImageView alloc] initWithFrame:CGRectMake(screenWidth - 35, 225, 15, 15)];
     [priceView setImage:[UIImage imageNamed:@"price"]];
     [scrollView addSubview:priceView];
 
-    priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth - 125, 217, 90, 30)];
+    priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth - 130, 217, 90, 30)];
     [priceLabel setText:[NSString stringWithFormat:@"%@", _place.price]];
     [priceLabel setFont:[UIFont systemFontOfSize:18.0f]];
     [priceLabel setTextAlignment:NSTextAlignmentRight];
     [scrollView addSubview:priceLabel];
     
     
-    UIImageView *timeView = [[UIImageView alloc] initWithFrame:CGRectMake(25, 225, 15, 15)];
+    UIImageView *timeView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 225, 15, 15)];
     [timeView setImage:[UIImage imageNamed:@"clock"]];
     [scrollView addSubview:timeView];
 
-    timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 218, screenWidth - 140, 30)];
+    timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 218, screenWidth - 140, 30)];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:[_place.leaveDt longValue]];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"HH:mm"];
@@ -93,11 +93,11 @@
     [timeLabel setFont:[UIFont systemFontOfSize:16.0f]];
     [scrollView addSubview:timeLabel];
 
-//    UILabel *__commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 240, screenWidth - 16, 25)];
-//    [__commentLabel setText:@"Комментарий"];
+    UILabel *__commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 240, screenWidth - 16, 25)];
+    [__commentLabel setText:@"Комментарий"];
 //    [scrollView addSubview:__commentLabel];
 
-    commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 270, screenWidth - 16, 25)];
+    commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 270, screenWidth - 40, 25)];
     [commentLabel setFont:[UIFont systemFontOfSize:15.0f]];
     [commentLabel setText:_place.comment];
     [scrollView addSubview:commentLabel];

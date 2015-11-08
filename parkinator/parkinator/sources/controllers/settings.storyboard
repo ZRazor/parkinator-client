@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -111,10 +112,10 @@
                                     <exclude reference="lR4-Qk-J5I"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="35V-bw-myT"/>
                                     <exclude reference="2nM-JO-GPr"/>
                                     <exclude reference="l6l-xy-rte"/>
                                     <exclude reference="noO-g7-j9e"/>
+                                    <exclude reference="35V-bw-myT"/>
                                     <exclude reference="5c7-dW-Qvq"/>
                                     <exclude reference="e3R-Kl-YdR"/>
                                 </mask>
@@ -126,10 +127,10 @@
                                     <include reference="lR4-Qk-J5I"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="35V-bw-myT"/>
                                     <include reference="2nM-JO-GPr"/>
                                     <include reference="l6l-xy-rte"/>
                                     <include reference="noO-g7-j9e"/>
+                                    <include reference="35V-bw-myT"/>
                                     <include reference="5c7-dW-Qvq"/>
                                     <include reference="e3R-Kl-YdR"/>
                                 </mask>
@@ -139,9 +140,10 @@
                             <tableViewSection id="9sK-6f-TuQ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iil-R9-oOu">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="192" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iil-R9-oOu" id="q5f-gt-pQa">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="ZZN-Iz-yiN">
@@ -172,7 +174,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="Bh9-tT-h9F"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -202,11 +204,11 @@
                                                     <exclude reference="y87-UE-Tgc"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="ToL-O0-LTy"/>
-                                                    <exclude reference="Vjc-Wl-2bE"/>
                                                     <exclude reference="8Bz-m2-SQT"/>
                                                     <exclude reference="V4h-mG-JgJ"/>
                                                     <exclude reference="xfC-oq-2kk"/>
+                                                    <exclude reference="ToL-O0-LTy"/>
+                                                    <exclude reference="Vjc-Wl-2bE"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -215,20 +217,21 @@
                                                     <include reference="y87-UE-Tgc"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="ToL-O0-LTy"/>
-                                                    <include reference="Vjc-Wl-2bE"/>
                                                     <include reference="8Bz-m2-SQT"/>
                                                     <include reference="V4h-mG-JgJ"/>
                                                     <include reference="xfC-oq-2kk"/>
+                                                    <include reference="ToL-O0-LTy"/>
+                                                    <include reference="Vjc-Wl-2bE"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UFE-8R-e2c">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="236" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UFE-8R-e2c" id="CuI-a3-bf5">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small" translatesAutoresizingMaskIntoConstraints="NO" id="rGu-Hb-yXb">
@@ -259,7 +262,7 @@
                                                         <constraint firstAttribute="width" constant="68" id="wh5-5w-lfI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -282,7 +285,7 @@
                                                         <constraint firstAttribute="width" constant="231" id="hhp-H3-tAg"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -321,13 +324,13 @@
                                                     <exclude reference="m88-Rm-VaM"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="5iu-Kt-Wjg"/>
-                                                    <exclude reference="FkN-ol-WOL"/>
-                                                    <exclude reference="RyT-0e-Dd8"/>
-                                                    <exclude reference="SOK-mU-6bx"/>
                                                     <exclude reference="3E4-71-M3V"/>
                                                     <exclude reference="SuR-jk-8ED"/>
                                                     <exclude reference="qlM-VK-omR"/>
+                                                    <exclude reference="RyT-0e-Dd8"/>
+                                                    <exclude reference="SOK-mU-6bx"/>
+                                                    <exclude reference="5iu-Kt-Wjg"/>
+                                                    <exclude reference="FkN-ol-WOL"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -337,13 +340,13 @@
                                                     <include reference="m88-Rm-VaM"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="5iu-Kt-Wjg"/>
-                                                    <include reference="FkN-ol-WOL"/>
-                                                    <include reference="RyT-0e-Dd8"/>
-                                                    <include reference="SOK-mU-6bx"/>
                                                     <include reference="3E4-71-M3V"/>
                                                     <include reference="SuR-jk-8ED"/>
                                                     <include reference="qlM-VK-omR"/>
+                                                    <include reference="RyT-0e-Dd8"/>
+                                                    <include reference="SOK-mU-6bx"/>
+                                                    <include reference="5iu-Kt-Wjg"/>
+                                                    <include reference="FkN-ol-WOL"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -354,10 +357,10 @@
                             <tableViewSection id="f5x-wv-H7d">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="Lio-sQ-6Cb">
-                                        <rect key="frame" x="0.0" y="404" width="600" height="55"/>
+                                        <rect key="frame" x="0.0" y="316" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lio-sQ-6Cb" id="ZBw-Ef-P1W">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75r-1k-WMR">

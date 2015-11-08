@@ -31,17 +31,17 @@
     UIStoryboard *placesStoryboard = [UIStoryboard storyboardWithName:@"places" bundle:nil];
     MRPlacesTableViewController *placesTableViewController = [placesStoryboard instantiateViewControllerWithIdentifier:@"placesController"];
     MRNavigationController *placesNavigationController = [[MRNavigationController alloc] initWithRootViewController:placesTableViewController];
-    [placesNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Места" image:[UIImage imageNamed:@"list_tab"] selectedImage:nil]];
+    [placesNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Места" image:[UIImage imageNamed:@"list_tab"] selectedImage:[UIImage imageNamed:@"list_tab"]]];
 
     UIStoryboard *settingsStoryboard = [UIStoryboard storyboardWithName:@"settings" bundle:nil];
     MRSettingsTableViewController *settingsTableViewController = [settingsStoryboard instantiateViewControllerWithIdentifier:@"settingsController"];
     MRNavigationController *settingsNavigationController = [[MRNavigationController alloc] initWithRootViewController:settingsTableViewController];
-    [settingsNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Аккаунт" image:[UIImage imageNamed:@"user_tab"] selectedImage:[UIImage imageNamed:@"checkcheck"]]];
+    [settingsNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Аккаунт" image:[UIImage imageNamed:@"user_tab"] selectedImage:[UIImage imageNamed:@"user_tab"]]];
 
     UIStoryboard *statusStoryboard = [UIStoryboard storyboardWithName:@"statusView" bundle:nil];
     MRInititatorStatusViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"inititatorController"];
     MRNavigationController *statusNavigationController = [[MRNavigationController alloc] initWithRootViewController:statusViewController];
-    [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:nil]];
+    [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:[UIImage imageNamed:@"checkcheck"] selectedImage:[UIImage imageNamed:@"checkcheck"]]];
 
 
 

@@ -65,7 +65,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="SoU-po-Uxl">
-                                                    <rect key="frame" x="291" y="24" width="16" height="16"/>
+                                                    <rect key="frame" x="294" y="24" width="16" height="16"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="0S0-ab-bJS"/>
@@ -116,7 +116,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="GMC-Hg-Q8s" secondAttribute="bottom" constant="3" id="jKf-sA-KcT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="UdV-4B-0Hy" secondAttribute="trailing" constant="1" id="kJA-dx-xpa"/>
                                                 <constraint firstItem="SoU-po-Uxl" firstAttribute="centerY" secondItem="7Kw-mQ-jdo" secondAttribute="centerY" constant="-4.5" id="oQO-uh-luv"/>
-                                                <constraint firstItem="UdV-4B-0Hy" firstAttribute="leading" secondItem="SoU-po-Uxl" secondAttribute="trailing" constant="8" id="v2b-Jx-RYK"/>
+                                                <constraint firstItem="UdV-4B-0Hy" firstAttribute="leading" secondItem="SoU-po-Uxl" secondAttribute="trailing" constant="5" id="v2b-Jx-RYK"/>
                                                 <constraint firstItem="3ur-4q-qik" firstAttribute="leading" secondItem="w5f-Rf-cah" secondAttribute="trailing" constant="31" id="ymI-1C-GDy"/>
                                             </constraints>
                                         </tableViewCellContentView>
