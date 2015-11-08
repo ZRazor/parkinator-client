@@ -96,7 +96,7 @@
         firstLoad = NO;
         [self loadItemsFromServer];
     }
-    if ([[MRAppDataShared userData] acceptedContractId] && !isSendingCoords) {
+    if ([[MRAppDataShared userData] acceptedContractId]) {
         isSendingCoords = YES;
         [[MRAppDataShared placeService] sendCoordsWithLat:@(currentLocation.coordinate.latitude)
                                                    andLon:@(currentLocation.coordinate.longitude)
