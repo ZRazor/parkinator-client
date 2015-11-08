@@ -10,6 +10,7 @@
 #import "MRTabBarController.h"
 #import "MRInititatorStatusViewController.h"
 #import "MRNavigationController.h"
+#import "MRAcceptorTableViewController.h"
 
 @interface MRAppDataProvider()
 
@@ -41,8 +42,8 @@
 }
 
 - (void)setInititator:(NSNumber *)placeId {
-    [self.authService.userData setInitiatedContractId:placeId];
-    [self.authService.userData saveToUserDefaults];
+    [self.userData setInitiatedContractId:placeId];
+    [self.userData saveToUserDefaults];
     if (self.tabBarController) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (placeId) {
@@ -55,6 +56,33 @@
                 newCntrlers[1] = statusNavigationController;
                 [self.tabBarController setViewControllers:newCntrlers];
                 [self.tabBarController.tabBar.items[1] setEnabled:YES];
+                [self.tabBarController setSelectedIndex:1];
+            } else {
+                if (self.tabBarController.selectedIndex == 1) {
+                    [self.tabBarController setSelectedIndex:0];
+                }
+                [self.tabBarController.tabBar.items[1] setEnabled:NO];
+            }
+        });
+    }
+}
+
+- (void)setAcceptor:(NSNumber *)placeId {
+    [self.authService.userData setAcceptedContractId:placeId];
+    [self.authService.userData saveToUserDefaults];
+    if (self.tabBarController) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (placeId) {
+                NSMutableArray *newCntrlers = [self.tabBarController.viewControllers mutableCopy];
+                UIStoryboard *statusStoryboard = [UIStoryboard storyboardWithName:@"statusView" bundle:nil];
+                MRAcceptorTableViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"acceptorController"];
+                [statusViewController setContractId:placeId];
+                MRNavigationController *statusNavigationController = [[MRNavigationController alloc] initWithRootViewController:statusViewController];
+                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:nil]];
+                newCntrlers[1] = statusNavigationController;
+                [self.tabBarController setViewControllers:newCntrlers];
+                [self.tabBarController.tabBar.items[1] setEnabled:YES];
+                [self.tabBarController setSelectedIndex:1];
             } else {
                 if (self.tabBarController.selectedIndex == 1) {
                     [self.tabBarController setSelectedIndex:0];

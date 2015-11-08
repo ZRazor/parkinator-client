@@ -99,10 +99,8 @@
                 if (error) {
                     NSLog(@"%@", [error localizedDescription]);
                     SCLAlertView *newAlert = [[SCLAlertView alloc] init];
-                    [newAlert showError:self.tabBarController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
+                    [newAlert showError:self.navigationController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
                 } else {
-                    [MRAppDataShared.authService.userData setInitiatedContractId:newPlaceId];
-                    [MRAppDataShared.authService.userData saveToUserDefaults];
                     [self dismissViewControllerAnimated:YES completion:^{
                         [MRAppDataShared setInititator:newPlaceId];
                     }];

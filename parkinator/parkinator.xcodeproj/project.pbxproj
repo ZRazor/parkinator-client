@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A131C0D1BEEDCA1004658F0 /* MRAcceptorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A131C0C1BEEDCA1004658F0 /* MRAcceptorTableViewController.m */; };
 		3A686D9D1BECC7E40015C45B /* MRPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A686D9C1BECC7E40015C45B /* MRPlaceTableViewCell.m */; };
 		3A686DA21BEDD7540015C45B /* MRPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A686DA11BEDD7540015C45B /* MRPlaceViewController.m */; };
 		3A686DA41BEE20A60015C45B /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A686DA31BEE20A60015C45B /* settings.storyboard */; };
@@ -52,6 +53,8 @@
 /* Begin PBXFileReference section */
 		1DEB11FF2269D29A2C30075B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		22818D053F67502BDCCB221C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3A131C0B1BEEDCA1004658F0 /* MRAcceptorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRAcceptorTableViewController.h; sourceTree = "<group>"; };
+		3A131C0C1BEEDCA1004658F0 /* MRAcceptorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRAcceptorTableViewController.m; sourceTree = "<group>"; };
 		3A686D9B1BECC7E40015C45B /* MRPlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRPlaceTableViewCell.h; sourceTree = "<group>"; };
 		3A686D9C1BECC7E40015C45B /* MRPlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRPlaceTableViewCell.m; sourceTree = "<group>"; };
 		3A686DA01BEDD7540015C45B /* MRPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRPlaceViewController.h; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				74D078561BEE151900AE2EFD /* MRInititatorStatusViewController.h */,
 				74D078571BEE151900AE2EFD /* MRInititatorStatusViewController.m */,
 				74D0785B1BEE157100AE2EFD /* statusView.storyboard */,
+				3A131C0B1BEEDCA1004658F0 /* MRAcceptorTableViewController.h */,
+				3A131C0C1BEEDCA1004658F0 /* MRAcceptorTableViewController.m */,
 			);
 			name = status;
 			sourceTree = "<group>";
@@ -579,6 +584,7 @@
 				74D078551BEDEECC00AE2EFD /* MRMapCellView.m in Sources */,
 				58AAA26334541FA13B1E628D /* MRPlaceService.m in Sources */,
 				74FD47E61BED896300B95EC3 /* MRLoginViewController.m in Sources */,
+				3A131C0D1BEEDCA1004658F0 /* MRAcceptorTableViewController.m in Sources */,
 				74FD47EC1BED923200B95EC3 /* MRAuthTextField.m in Sources */,
 				3A686DA71BEE22770015C45B /* MRSettingsTableViewController.m in Sources */,
 				58AAA447CD498EDD539E99A8 /* MRPlaceMarker.m in Sources */,

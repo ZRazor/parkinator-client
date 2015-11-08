@@ -11,7 +11,8 @@
 #import "MRAppDataProvider.h"
 
 @implementation MRStatusMapCellView {
-
+    float prevZoom;
+    GMSMarker *marker;
 }
 
 - (void)awakeFromNib {
@@ -20,10 +21,12 @@
     CLLocationDegrees lat = 43.1;
     CLLocationDegrees lon = 131.9;
 
+    prevZoom = 16;
+
 
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat
                                                             longitude:lon
-                                                                 zoom:14];
+                                                                 zoom:prevZoom];
     _mapView = [GMSMapView mapWithFrame:CGRectMake(0,0,screenWidth,self.frame.size.height) camera:camera];
     [self addSubview:_mapView];
 
@@ -36,10 +39,16 @@
 }
 
 - (void)setCoordsWithLat:(CLLocationDegrees)lat andLot:(CLLocationDegrees)lon {
-    GMSMarker *marker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(lat, lon)];
+    if (marker.position.latitude == lat && marker.position.longitude == lon) {
+        return;
+    }
+    [_mapView clear];
+    marker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(lat, lon)];
     [marker setAppearAnimation:kGMSMarkerAnimationPop];
     //TODO new icon for user
     [marker setIcon:[UIImage imageNamed:@"marker"]];
     [marker setMap:_mapView];
+    GMSCameraPosition *newPos = [GMSCameraPosition cameraWithLatitude:lat longitude:lon zoom:_mapView.camera.zoom];
+    [_mapView animateToCameraPosition:newPos];
 }
 @end

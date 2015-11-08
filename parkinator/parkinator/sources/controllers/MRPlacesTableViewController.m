@@ -33,6 +33,7 @@
     BOOL firstLoad;
     NSMutableArray *items;
     NSMutableArray *itemsCopy;
+    BOOL isSendingCoords;
 }
 
 - (void)viewDidLoad {
@@ -41,6 +42,7 @@
     [self setNeedsStatusBarAppearanceUpdate];
     
     firstLoad = YES;
+    isSendingCoords = NO;
 
     [self clearItems];
 
@@ -93,6 +95,14 @@
     if (firstLoad) {
         firstLoad = NO;
         [self loadItemsFromServer];
+    }
+    if ([[MRAppDataShared userData] acceptedContractId] && !isSendingCoords) {
+        isSendingCoords = YES;
+        [[MRAppDataShared placeService] sendCoordsWithLat:@(currentLocation.coordinate.latitude)
+                                                   andLon:@(currentLocation.coordinate.longitude)
+        block:^(){
+            isSendingCoords = NO;
+        }];
     }
 
 }
@@ -219,18 +229,6 @@
     MRPlaceViewController *placeViewController = [[MRPlaceViewController alloc] init];
     [placeViewController setPlace:place];
     [self.navigationController pushViewController:placeViewController animated:YES];
-    return;
-    [MRAppDataShared.placeService loadPlaceWithId:place.id
-                                           block:
-                                                   ^(NSError *error, MRPlace *place) {
-                                                       NSLog(@"buy with");
-                                                   }];
-    return;
-    [MRAppDataShared.placeService buyPlaceWithId:place.id
-    block:
-            ^(NSError *error, NSNumber *number) {
-                NSLog(@"buy with %@", number);
-            }];
 }
 
 /*

@@ -1,25 +1,26 @@
 //
-//  MRInititatorStatusViewController.m
+//  MRAcceptorTableViewController.m
 //  parkinator
 //
-//  Created by Mikhail Zinov on 07.11.15.
+//  Created by Anton Zlotnikov on 08.11.15.
 //  Copyright © 2015 Anton Zlotnikov. All rights reserved.
 //
 
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
-#import "MRInititatorStatusViewController.h"
+#import "MRAcceptorTableViewController.h"
+#import "MRStatusMapCellView.h"
 #import "MRAppDataProvider.h"
 #import "MRPlace.h"
-#import "MRStatusMapCellView.h"
 
-@interface MRInititatorStatusViewController ()
+@interface MRAcceptorTableViewController ()
 
 @end
 
-@implementation MRInititatorStatusViewController {
+@implementation MRAcceptorTableViewController {
     MRPlace *place;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +33,7 @@
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -66,17 +67,13 @@
 
 - (void)clearFields {
     [_addressLabel setText:@""];
-    [_otherPlaceInfoLabel setText:@""];
-    [_carTypeLabel setImage:[UIImage imageNamed:@"xxx"]];
-    [self clearAcceptor];
+    [_carColorLabel setText:@""];
+    [_carNameLabel setText:@""];
+    [_carNumberLabel setText:@""];
+    [_timeLabel setText:@""];
+    [_commentLabel setText:@""];
 }
 
-- (void)clearAcceptor {
-    [_acceptorCarColorLabel setText:@""];
-    [_acceptorCarNameLabel setText:@"Вашу заявку еще никто не купил"];
-    [_acceptorCarNumberLabel setText:@""];
-    [_mapViewCell.mapView setHidden:YES];
-}
 
 - (void)setPlaceInterface {
     [_addressLabel setText:place.address];
@@ -84,19 +81,17 @@
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"HH:mm"];
     NSString *leaveDtStr = [format stringFromDate:date];
-    [_otherPlaceInfoLabel setText:[NSString stringWithFormat:@"в %@ за %@", leaveDtStr, place.price]];
-    [_carTypeLabel setImage:[UIImage imageNamed:place.initiator.carType]];
-    if (place.acceptor.id) {
-        [_acceptorCarColorLabel setText:place.acceptor.carColor];
-        [_acceptorCarNameLabel setText:place.acceptor.carModel];
-        [_acceptorCarNumberLabel setText:place.acceptor.carNumber];
-        [_mapViewCell setCoordsWithLat:[place.acceptor.lat doubleValue] andLot:[place.acceptor.lon doubleValue]];
-        [_mapViewCell.mapView setHidden:NO];
-    } else {
-        [self clearAcceptor];
+    [_timeLabel setText:leaveDtStr];
+    [_commentLabel setText:place.comment];
+    if (place.initiator.id) {
+        [_carColorLabel setText:place.initiator.carColor];
+        [_carNameLabel setText:place.initiator.carModel];
+        [_carNumberLabel setText:place.initiator.carNumber];
+        [_mapCell setCoordsWithLat:[place.initiator.lat doubleValue] andLot:[place.initiator.lon doubleValue]];
     }
     [self.tableView reloadData];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -157,12 +152,12 @@
 }
 */
 
-- (IBAction)removePlaceAction:(id)sender {
+- (IBAction)cancelAction:(id)sender {
     [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    [[MRAppDataShared placeService] removePlaceWithId:self.contractId block:^(NSError *error) {
+    [[MRAppDataShared placeService] declinePlaceWithId:self.contractId block:^(NSError *error) {
         [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
         if (!error) {
-            [MRAppDataShared setInititator:nil];
+            [MRAppDataShared setAcceptor:nil];
         } else {
             SCLAlertView *newAlert = [[SCLAlertView alloc] init];
             [newAlert showError:self.tabBarController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];

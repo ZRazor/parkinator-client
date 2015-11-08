@@ -15,11 +15,13 @@
 
 - (void)createPlaceWithLat:(NSNumber *)lat andLon:(NSNumber *)lon andCarType:(NSString *)carType andPrice:(NSNumber *)price andAddress:(NSString *)address andComment:(NSString *)comment andTimeToLeave:(NSNumber *)timeToLeave block:(void (^)(NSError *, NSNumber *))block;
 
-- (void)buyPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *, NSNumber *))block;
+- (void)buyPlaceWithId:(NSNumber *)placeId andLat:(NSNumber *)lat andLon:(NSNumber *)lon block:(void (^)(NSError *, NSNumber *))block;
 
 - (void)removePlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error))block;
 
-- (void)sendCoordsWithLat:(NSNumber *)lat andLon:(NSNumber *)lon;
+- (void)declinePlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error))block;
+
+- (void)sendCoordsWithLat:(NSNumber *)lat andLon:(NSNumber *)lon  block:(void (^)())block ;
 
 - (void)loadPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error, MRPlace *place))block;
 
