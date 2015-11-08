@@ -200,11 +200,6 @@
     return 74;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 0;
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MRPlaceTableViewCell *cell = (MRPlaceTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"placeCell" forIndexPath:indexPath];
