@@ -52,7 +52,7 @@
                 MRInititatorStatusViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"inititatorController"];
                 [statusViewController setContractId:placeId];
                 MRNavigationController *statusNavigationController = [[MRNavigationController alloc] initWithRootViewController:statusViewController];
-                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:nil]];
+                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:[UIImage imageNamed:@"checkcheck"]]];
                 newCntrlers[1] = statusNavigationController;
                 [self.tabBarController setViewControllers:newCntrlers];
                 [self.tabBarController.tabBar.items[1] setEnabled:YES];
@@ -67,6 +67,8 @@
     }
 }
 
+//покупатель
+
 - (void)setAcceptor:(NSNumber *)placeId {
     [self.authService.userData setAcceptedContractId:placeId];
     [self.authService.userData saveToUserDefaults];
@@ -78,7 +80,7 @@
                 MRAcceptorTableViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"acceptorController"];
                 [statusViewController setContractId:placeId];
                 MRNavigationController *statusNavigationController = [[MRNavigationController alloc] initWithRootViewController:statusViewController];
-                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:nil]];
+                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:[UIImage imageNamed:@"checkcheck"]]];
                 newCntrlers[1] = statusNavigationController;
                 [self.tabBarController setViewControllers:newCntrlers];
                 [self.tabBarController.tabBar.items[1] setEnabled:YES];

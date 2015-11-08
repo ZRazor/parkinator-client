@@ -36,7 +36,7 @@
     UIStoryboard *settingsStoryboard = [UIStoryboard storyboardWithName:@"settings" bundle:nil];
     MRSettingsTableViewController *settingsTableViewController = [settingsStoryboard instantiateViewControllerWithIdentifier:@"settingsController"];
     MRNavigationController *settingsNavigationController = [[MRNavigationController alloc] initWithRootViewController:settingsTableViewController];
-    [settingsNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Аккаунт" image:[UIImage imageNamed:@"user_tab"] selectedImage:nil]];
+    [settingsNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Аккаунт" image:[UIImage imageNamed:@"user_tab"] selectedImage:[UIImage imageNamed:@"checkcheck"]]];
 
     UIStoryboard *statusStoryboard = [UIStoryboard storyboardWithName:@"statusView" bundle:nil];
     MRInititatorStatusViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"inititatorController"];
