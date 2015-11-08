@@ -156,7 +156,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Продавец" id="m8L-0s-A3H">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="RBx-mv-K1D">
+                        <barButtonItem key="rightBarButtonItem" title="Отменить" id="RBx-mv-K1D">
                             <connections>
                                 <action selector="cancelAction:" destination="Dav-Ya-lna" id="PuB-Nn-lsI"/>
                             </connections>

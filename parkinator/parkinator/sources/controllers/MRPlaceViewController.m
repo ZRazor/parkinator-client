@@ -143,8 +143,8 @@
             SCLAlertView *newAlert = [[SCLAlertView alloc] init];
             [newAlert showError:self.tabBarController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
         } else {
-            [self.navigationController pushViewController:self animated:NO];
             [MRAppDataShared setAcceptor:number appLaunched:NO];
+            [self.navigationController popToRootViewControllerAnimated:NO];
 //            [buyButton setTitle:@"Куплено" forState:UIControlStateNormal];
 //            [buyButton setEnabled:NO];
         }
