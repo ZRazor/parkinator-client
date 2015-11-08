@@ -12,6 +12,7 @@
 #import "MRStatusMapCellView.h"
 #import "MRAppDataProvider.h"
 #import "MRPlace.h"
+#import "MRError.h"
 
 @interface MRAcceptorTableViewController ()
 
@@ -19,6 +20,7 @@
 
 @implementation MRAcceptorTableViewController {
     MRPlace *place;
+    NSTimer *timer;
 }
 
 
@@ -29,7 +31,7 @@
 
     [self loadDataFromServer:YES];
 
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(reloadInfo) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(reloadInfo) userInfo:nil repeats:YES];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -54,6 +56,23 @@
         if (!error) {
             place = newPlace;
             [self setPlaceInterface];
+            if ([place.status isEqualToString:PLACE_STATUS_FINISHED]) {
+                [timer invalidate];
+                timer = nil;
+                SCLAlertView *newAlert = [[SCLAlertView alloc] init];
+                [newAlert alertIsDismissed:^{
+                    [MRAppDataShared setAcceptor:nil];
+                }];
+                [newAlert showSuccess:self.tabBarController title:@"Ура" subTitle:@"Сделка завершена" closeButtonTitle:@"Закрыть" duration:0.0f];
+            } else if ([place.status isEqualToString:PLACE_STATUS_DELETED]) {
+                [timer invalidate];
+                timer = nil;
+                SCLAlertView *newAlert = [[SCLAlertView alloc] init];
+                [newAlert alertIsDismissed:^{
+                    [MRAppDataShared setAcceptor:nil];
+                }];
+                [newAlert showError:self.tabBarController title:@"Увы" subTitle:@"Продавец отменил сделку" closeButtonTitle:@"Закрыть" duration:0.0f];
+            }
         } else {
             NSLog(@"%@", [error localizedDescription]);
             if (showHud) {
@@ -83,11 +102,11 @@
     NSString *leaveDtStr = [format stringFromDate:date];
     [_timeLabel setText:leaveDtStr];
     [_commentLabel setText:place.comment];
+    [_mapCell setCoordsWithLat:[place.lat doubleValue] andLot:[place.lon doubleValue]];
     if (place.initiator.id) {
         [_carColorLabel setText:place.initiator.carColor];
         [_carNameLabel setText:place.initiator.carModel];
         [_carNumberLabel setText:place.initiator.carNumber];
-        [_mapCell setCoordsWithLat:[place.initiator.lat doubleValue] andLot:[place.initiator.lon doubleValue]];
     }
     [self.tableView reloadData];
 }

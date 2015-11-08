@@ -12,6 +12,7 @@
 #import "MRAppDataProvider.h"
 #import "MRPlace.h"
 #import "MRStatusMapCellView.h"
+#import "MRError.h"
 
 @interface MRInititatorStatusViewController ()
 
@@ -19,6 +20,7 @@
 
 @implementation MRInititatorStatusViewController {
     MRPlace *place;
+    NSTimer *timer;
 }
 
 - (void)viewDidLoad {
@@ -28,7 +30,7 @@
 
     [self loadDataFromServer:YES];
 
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(reloadInfo) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(reloadInfo) userInfo:nil repeats:YES];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -53,6 +55,17 @@
         if (!error) {
             place = newPlace;
             [self setPlaceInterface];
+            if ([place.status isEqualToString:PLACE_STATUS_FINISHED]) {
+                [timer invalidate];
+                timer = nil;
+                SCLAlertView *newAlert = [[SCLAlertView alloc] init];
+                [newAlert alertIsDismissed:^{
+                    [MRAppDataShared setInititator:nil];
+                }];
+                [newAlert showSuccess:self.tabBarController title:@"Ура" subTitle:@"Сделка завершена" closeButtonTitle:@"Закрыть" duration:0.0f];
+            } else {
+
+            }
         } else {
             NSLog(@"%@", [error localizedDescription]);
             if (showHud) {
