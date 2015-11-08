@@ -44,7 +44,7 @@
                                     [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
                                     error = [NSError errorWithDomain:MRAppDomain code:MRCreatePlaceError userInfo:errorDetails];
                                 } else {
-                                    newPlaceId = result[@"id"];
+                                    newPlaceId = result[@"data"][@"id"];
                                 }
                             }
                             if (error) {
@@ -80,6 +80,30 @@
                          }];
 }
 
+- (void)removePlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error))block
+{
+    [MRRequester doPostRequest:API_DELETE_PLACE
+                        params:@{
+                                @"accessToken": [_userData accessToken],
+                                @"id":placeId
+                        }
+                         block:^(id result, NSError *error) {
+                             if (!error) {
+                                 NSDictionary *dictionary = (NSDictionary *) result;
+                                 if (![dictionary[@"error"] isEqualToString:API_ERROR_SUCCESS]) {
+                                     NSMutableDictionary *errorDetails = [NSMutableDictionary dictionary];
+                                     [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
+                                     error = [NSError errorWithDomain:MRAppDomain code:MRBuyPlaceError userInfo:errorDetails];
+                                 } else {
+                                 }
+                             }
+                             if (error) {
+                                 NSLog(@"Delete place error:\n%@", [error userInfo]);
+                             }
+                             block(error);
+                         }];
+}
+
 - (void)sendCoordsWithLat:(NSNumber *)lat andLon:(NSNumber *)lon {
     [MRRequester doPostRequest:API_SEND_CUR_COORDS
                         params:@{
@@ -106,7 +130,9 @@
                                          properties:@{
                                                  @"error" : [SVType string],
                                                  @"msg" : [SVType string],
-                                                 @"data" : [MRPlace jsonSchema]
+                                                 @"data" : [[SVType object] properties:@{
+                                                         @"contract":[MRPlace jsonSchema]
+                                                 }]
                                          }];
 
                                  id validatedJson = [schema validateJson:result error:&error];
@@ -118,20 +144,6 @@
                                          error = [NSError errorWithDomain:MRAppDomain code:MRLoadPlaceError userInfo:errorDetails];
                                      } else {
                                          place = dictionary[@"data"][@"contract"];
-                                         NSDictionary *dictPlace = result[@"data"][@"contract"];
-                                         id persSchema = [MRPerson jsonSchema];
-                                         if (dictPlace[@"initiator"]) {
-                                            id validatedJson = [persSchema validateJson:dictPlace[@"initiator"] error:&error];
-                                            if (!error) {
-                                                [place setInitiator:[persSchema instantiateValidatedJson:validatedJson]];
-                                            }
-                                         }
-                                         if (dictPlace[@"acceptor"]) {
-                                             id validatedJson = [persSchema validateJson:dictPlace[@"acceptor"] error:&error];
-                                             if (!error) {
-                                                 [place setAcceptor:[persSchema instantiateValidatedJson:validatedJson]];
-                                             }
-                                         }
                                      }
                                  }
                              }

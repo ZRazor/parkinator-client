@@ -7,6 +7,9 @@
 #import "MRAuthService.h"
 #import "MRUserData.h"
 #import "MRPlaceService.h"
+#import "MRTabBarController.h"
+#import "MRInititatorStatusViewController.h"
+#import "MRNavigationController.h"
 
 @interface MRAppDataProvider()
 
@@ -37,5 +40,29 @@
     return self;
 }
 
+- (void)setInititator:(NSNumber *)placeId {
+    [self.authService.userData setInitiatedContractId:placeId];
+    [self.authService.userData saveToUserDefaults];
+    if (self.tabBarController) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (placeId) {
+                NSMutableArray *newCntrlers = [self.tabBarController.viewControllers mutableCopy];
+                UIStoryboard *statusStoryboard = [UIStoryboard storyboardWithName:@"statusView" bundle:nil];
+                MRInititatorStatusViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"inititatorController"];
+                [statusViewController setContractId:placeId];
+                MRNavigationController *statusNavigationController = [[MRNavigationController alloc] initWithRootViewController:statusViewController];
+                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:nil]];
+                newCntrlers[1] = statusNavigationController;
+                [self.tabBarController setViewControllers:newCntrlers];
+                [self.tabBarController.tabBar.items[1] setEnabled:YES];
+            } else {
+                if (self.tabBarController.selectedIndex == 1) {
+                    [self.tabBarController setSelectedIndex:0];
+                }
+                [self.tabBarController.tabBar.items[1] setEnabled:NO];
+            }
+        });
+    }
+}
 
 @end

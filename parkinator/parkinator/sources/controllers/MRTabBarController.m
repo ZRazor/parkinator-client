@@ -12,7 +12,7 @@
 #import "MRSettingsTableViewController.h"
 #import "MRAppDataProvider.h"
 #import "MRLoginViewController.h"
-#import "MRStatusViewController.h"
+#import "MRInititatorStatusViewController.h"
 
 @interface MRTabBarController ()
 
@@ -39,7 +39,7 @@
     [settingsNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Аккаунт" image:[UIImage imageNamed:@"user_tab"] selectedImage:nil]];
 
     UIStoryboard *statusStoryboard = [UIStoryboard storyboardWithName:@"statusView" bundle:nil];
-    MRStatusViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"inititatorController"];
+    MRInititatorStatusViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"inititatorController"];
     MRNavigationController *statusNavigationController = [[MRNavigationController alloc] initWithRootViewController:statusViewController];
     [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:nil]];
 
@@ -53,16 +53,15 @@
 
     [self.tabBar.items[1] setEnabled:NO];
 
+    [MRAppDataShared setTabBarController:self];
+
     [[[MRAppDataProvider shared] userData] loadFromServer:^(NSError *error, BOOL invalidToken) {
         if (invalidToken) {
             MRLoginViewController *loginViewController = [[MRLoginViewController alloc] init];
             [[[UIApplication sharedApplication] keyWindow] setRootViewController:loginViewController];
         } else {
-            if (MRAppDataShared.userData.initiatedContractId) {
-                MRStatusViewController *statusViewController = ((MRNavigationController *)self.viewControllers[1]).visibleViewController;
-                [statusViewController setContractId:MRAppDataShared.userData.initiatedContractId];
-                [self.tabBar.items[1] setEnabled:YES];
-            }
+            [MRAppDataShared setInititator:MRAppDataShared.userData.initiatedContractId];
+
         }
     }];
 
