@@ -20,13 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [_phoneLabel setText:MRAppDataShared.userData.phone];
-    [_balanceLabel setText:[NSString stringWithFormat:@"%@", MRAppDataShared.userData.balance]];
-    [_carModelLabel setText:MRAppDataShared.userData.carModel];
-    [_carColorLabel setText:MRAppDataShared.userData.carColor];
-    [_carNumberLabel setText:MRAppDataShared.userData.carNumber];
-    [_carTypeImageView setImage:[UIImage imageNamed:MRAppDataShared.userData.carType]];
-    [self.tableView reloadData];
+    [self updateInfo];
 
     
     // Uncomment the following line to preserve selection between presentations.
@@ -34,6 +28,29 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)updateInfo {
+    [_phoneLabel setText:MRAppDataShared.userData.phone];
+    [_balanceLabel setText:[NSString stringWithFormat:@"%@", MRAppDataShared.userData.balance]];
+    [_carModelLabel setText:MRAppDataShared.userData.carModel];
+    [_carColorLabel setText:MRAppDataShared.userData.carColor];
+    [_carNumberLabel setText:MRAppDataShared.userData.carNumber];
+    [_carTypeImageView setImage:[UIImage imageNamed:MRAppDataShared.userData.carType]];
+    [self.tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [[[MRAppDataProvider shared] userData] loadFromServer:^(NSError *error, BOOL invalidToken) {
+        if (invalidToken) {
+            MRLoginViewController *loginViewController = [[MRLoginViewController alloc] init];
+            [[[UIApplication sharedApplication] keyWindow] setRootViewController:loginViewController];
+        } else {
+            [MRAppDataShared setInititator:MRAppDataShared.userData.initiatedContractId appLaunched:YES] ;
+            [MRAppDataShared setAcceptor:MRAppDataShared.userData.acceptedContractId appLaunched:YES];
+            [self updateInfo];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

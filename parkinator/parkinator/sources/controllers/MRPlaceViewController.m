@@ -111,23 +111,23 @@
 
     [scrollView setContentSize:CGSizeMake(screenWidth, buyButton.frame.origin.y + buyButton.frame.size.height + 10)];
 
-    if ([[MRAppDataShared userData] acceptedContractId] || [[MRAppDataShared userData] initiatedContractId]) {
-        //TODO do some other disign
-        [buyButton setEnabled:NO];
-    }
+//    if ([[MRAppDataShared userData] acceptedContractId] || [[MRAppDataShared userData] initiatedContractId]) {
+//        //TODO do some other disign
+//        [buyButton setEnabled:NO];
+//    }
 
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    if ([[MRAppDataShared userData] acceptedContractId] || [[MRAppDataShared userData] initiatedContractId]) {
-        //TODO do some other disign
-        [buyButton setEnabled:NO];
-        [buyButton setTitle:@"Куплено" forState:UIControlStateNormal];
-
-    } else {
-        [buyButton setEnabled:YES];
-        [buyButton setTitle:@"Купить" forState:UIControlStateNormal];
-    }
+//    if ([[[MRAppDataShared userData] acceptedContractId] isEqualToNumber:_place.id]) {
+//        //TODO do some other disign
+//        [buyButton setEnabled:NO];
+//        [buyButton setTitle:@"Куплено" forState:UIControlStateNormal];
+//
+//    } else {
+//        [buyButton setEnabled:YES];
+//        [buyButton setTitle:@"Купить" forState:UIControlStateNormal];
+//    }
 }
 
 - (void)buyAction {
@@ -143,9 +143,9 @@
             SCLAlertView *newAlert = [[SCLAlertView alloc] init];
             [newAlert showError:self.tabBarController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
         } else {
-            [MRAppDataShared setAcceptor:number];
-            [buyButton setTitle:@"Куплено" forState:UIControlStateNormal];
-            [buyButton setEnabled:NO];
+            [MRAppDataShared setAcceptor:number appLaunched:NO];
+//            [buyButton setTitle:@"Куплено" forState:UIControlStateNormal];
+//            [buyButton setEnabled:NO];
         }
                                                        NSLog(@"buy with %@", number);
                                                    }];

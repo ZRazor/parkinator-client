@@ -60,12 +60,10 @@
             MRLoginViewController *loginViewController = [[MRLoginViewController alloc] init];
             [[[UIApplication sharedApplication] keyWindow] setRootViewController:loginViewController];
         } else {
-            [MRAppDataShared setInititator:MRAppDataShared.userData.initiatedContractId];
-            [MRAppDataShared setAcceptor:MRAppDataShared.userData.acceptedContractId];
+            [MRAppDataShared setInititator:MRAppDataShared.userData.initiatedContractId appLaunched:YES];
+            [MRAppDataShared setAcceptor:MRAppDataShared.userData.acceptedContractId appLaunched:YES];
         }
     }];
-
-//    if ()
 
 
 }
