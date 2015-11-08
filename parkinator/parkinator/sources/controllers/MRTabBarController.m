@@ -61,7 +61,7 @@
             [[[UIApplication sharedApplication] keyWindow] setRootViewController:loginViewController];
         } else {
             [MRAppDataShared setInititator:MRAppDataShared.userData.initiatedContractId];
-
+            [MRAppDataShared setAcceptor:MRAppDataShared.userData.acceptedContractId];
         }
     }];
 

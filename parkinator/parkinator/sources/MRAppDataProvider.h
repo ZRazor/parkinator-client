@@ -27,6 +27,8 @@
 
 - (void)setInititator:(NSNumber *)placeId;
 
+- (void)setAcceptor:(NSNumber *)placeId;
+
 // clue for improper use (produces compile time error)
 + (instancetype)alloc __attribute__((unavailable("alloc not available, call shared instead")));
 - (instancetype)init __attribute__((unavailable("init not available, call shared instead")));

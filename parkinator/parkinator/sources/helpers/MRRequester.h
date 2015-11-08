@@ -16,6 +16,7 @@
 #define API_LOAD_PLACE @"/parking/show"
 #define API_SEND_CUR_COORDS @"/user/set/position"
 #define API_DELETE_PLACE @"/parking/delete"
+#define API_DECLINE_PLACE @"/parking/decline"
 
 @interface MRRequester : NSObject
 

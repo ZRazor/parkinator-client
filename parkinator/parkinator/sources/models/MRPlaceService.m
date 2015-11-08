@@ -54,11 +54,16 @@
                         }];
 }
 
-- (void)buyPlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error, NSNumber *newPlaceId))block
+- (void)buyPlaceWithId:(NSNumber *)placeId
+                andLat:(NSNumber *)lat
+                andLon:(NSNumber *)lon
+                 block:(void (^)(NSError *error, NSNumber *newPlaceId))block
 {
     [MRRequester doPostRequest:API_BUY_PLACE
                         params:@{
                                 @"accessToken": [_userData accessToken],
+                                @"lat":lat,
+                                @"lon":lon,
                                 @"id":placeId
                         }
                          block:^(id result, NSError *error) {
@@ -104,7 +109,32 @@
                          }];
 }
 
-- (void)sendCoordsWithLat:(NSNumber *)lat andLon:(NSNumber *)lon {
+
+- (void)declinePlaceWithId:(NSNumber *)placeId block:(void (^)(NSError *error))block
+{
+    [MRRequester doPostRequest:API_DECLINE_PLACE
+                        params:@{
+                                @"accessToken": [_userData accessToken],
+                                @"id":placeId
+                        }
+                         block:^(id result, NSError *error) {
+                             if (!error) {
+                                 NSDictionary *dictionary = (NSDictionary *) result;
+                                 if (![dictionary[@"error"] isEqualToString:API_ERROR_SUCCESS]) {
+                                     NSMutableDictionary *errorDetails = [NSMutableDictionary dictionary];
+                                     [errorDetails setValue:dictionary[@"msg"] forKey:NSLocalizedDescriptionKey];
+                                     error = [NSError errorWithDomain:MRAppDomain code:MRBuyPlaceError userInfo:errorDetails];
+                                 } else {
+                                 }
+                             }
+                             if (error) {
+                                 NSLog(@"Decline place error:\n%@", [error userInfo]);
+                             }
+                             block(error);
+                         }];
+}
+
+- (void)sendCoordsWithLat:(NSNumber *)lat andLon:(NSNumber *)lon block:(void (^)())block {
     [MRRequester doPostRequest:API_SEND_CUR_COORDS
                         params:@{
                                 @"accessToken": [_userData accessToken],
@@ -112,7 +142,7 @@
                                 @"lon":lon
                         }
                          block:^(id result, NSError *error) {
-
+                             block();
                          }];
 }
 

@@ -16,6 +16,7 @@
 @property NSNumber *id;
 @property NSString *phone;
 @property NSString *comment;
+@property NSString *status;
 @property NSNumber *price;
 @property NSString *carType;
 @property NSString *carModel;
