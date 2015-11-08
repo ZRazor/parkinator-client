@@ -90,11 +90,11 @@
                                                         <constraint firstAttribute="width" constant="14" id="zOd-ah-b57"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ул. Красного знамени 69" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wto-Ey-JSE">
-                                                    <rect key="frame" x="17" y="4" width="350" height="26"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ул. Красного знамени 69" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wto-Ey-JSE">
+                                                    <rect key="frame" x="17" y="0.0" width="266" height="40"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="26" id="OwU-nR-HSr"/>
+                                                        <constraint firstAttribute="height" constant="40" id="OwU-nR-HSr"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,7 +103,7 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="Wto-Ey-JSE" firstAttribute="trailing" secondItem="7Kw-mQ-jdo" secondAttribute="trailingMargin" id="0oZ-x8-FNl"/>
+                                                <constraint firstItem="Wto-Ey-JSE" firstAttribute="trailing" secondItem="7Kw-mQ-jdo" secondAttribute="trailingMargin" constant="-84" id="0oZ-x8-FNl"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="3ur-4q-qik" secondAttribute="bottom" constant="-1" id="8Ft-8O-8P6"/>
                                                 <constraint firstItem="QMc-l6-rPC" firstAttribute="leading" secondItem="w5f-Rf-cah" secondAttribute="trailing" constant="15" id="8IC-za-WCR"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="QMc-l6-rPC" secondAttribute="bottom" constant="3" id="8fk-YG-X3b"/>
@@ -111,7 +111,7 @@
                                                 <constraint firstItem="w5f-Rf-cah" firstAttribute="leading" secondItem="GMC-Hg-Q8s" secondAttribute="trailing" constant="4" id="CFQ-sd-zfM"/>
                                                 <constraint firstItem="GMC-Hg-Q8s" firstAttribute="leading" secondItem="7Kw-mQ-jdo" secondAttribute="leadingMargin" constant="7" id="F9m-xi-m7p"/>
                                                 <constraint firstItem="UdV-4B-0Hy" firstAttribute="centerY" secondItem="7Kw-mQ-jdo" secondAttribute="centerY" constant="-5" id="O7e-mG-4Pa"/>
-                                                <constraint firstItem="Wto-Ey-JSE" firstAttribute="top" secondItem="7Kw-mQ-jdo" secondAttribute="topMargin" constant="-4" id="S9R-T1-DBT"/>
+                                                <constraint firstItem="Wto-Ey-JSE" firstAttribute="top" secondItem="7Kw-mQ-jdo" secondAttribute="topMargin" constant="-8" id="S9R-T1-DBT"/>
                                                 <constraint firstItem="Wto-Ey-JSE" firstAttribute="leading" secondItem="7Kw-mQ-jdo" secondAttribute="leadingMargin" constant="9" id="gle-hE-a4H"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GMC-Hg-Q8s" secondAttribute="bottom" constant="3" id="jKf-sA-KcT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="UdV-4B-0Hy" secondAttribute="trailing" constant="1" id="kJA-dx-xpa"/>
