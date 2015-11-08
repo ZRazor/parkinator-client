@@ -61,7 +61,7 @@
                 timer = nil;
                 SCLAlertView *newAlert = [[SCLAlertView alloc] init];
                 [newAlert alertIsDismissed:^{
-                    [MRAppDataShared setAcceptor:nil];
+                    [MRAppDataShared setAcceptor:nil appLaunched:NO];
                 }];
                 [newAlert showSuccess:self.tabBarController title:@"Ура" subTitle:@"Сделка завершена" closeButtonTitle:@"Закрыть" duration:0.0f];
             } else if ([place.status isEqualToString:PLACE_STATUS_DELETED]) {
@@ -69,7 +69,7 @@
                 timer = nil;
                 SCLAlertView *newAlert = [[SCLAlertView alloc] init];
                 [newAlert alertIsDismissed:^{
-                    [MRAppDataShared setAcceptor:nil];
+                    [MRAppDataShared setAcceptor:nil appLaunched:NO];
                 }];
                 [newAlert showError:self.tabBarController title:@"Увы" subTitle:@"Продавец отменил сделку" closeButtonTitle:@"Закрыть" duration:0.0f];
             }
@@ -176,7 +176,7 @@
     [[MRAppDataShared placeService] declinePlaceWithId:self.contractId block:^(NSError *error) {
         [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
         if (!error) {
-            [MRAppDataShared setAcceptor:nil];
+            [MRAppDataShared setAcceptor:nil appLaunched:NO];
         } else {
             SCLAlertView *newAlert = [[SCLAlertView alloc] init];
             [newAlert showError:self.tabBarController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];

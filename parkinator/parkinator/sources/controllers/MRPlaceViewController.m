@@ -119,7 +119,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    if ([[MRAppDataShared userData] acceptedContractId] || [[MRAppDataShared userData] initiatedContractId]) {
+    if ([[[MRAppDataShared userData] acceptedContractId] isEqualToNumber:_place.id]) {
         //TODO do some other disign
         [buyButton setEnabled:NO];
         [buyButton setTitle:@"Куплено" forState:UIControlStateNormal];
@@ -143,7 +143,7 @@
             SCLAlertView *newAlert = [[SCLAlertView alloc] init];
             [newAlert showError:self.tabBarController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
         } else {
-            [MRAppDataShared setAcceptor:number];
+            [MRAppDataShared setAcceptor:number appLaunched:NO];
             [buyButton setTitle:@"Куплено" forState:UIControlStateNormal];
             [buyButton setEnabled:NO];
         }

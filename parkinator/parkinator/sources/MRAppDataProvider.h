@@ -25,9 +25,9 @@
 
 + (MRAppDataProvider *)shared;
 
-- (void)setInititator:(NSNumber *)placeId;
+- (void)setInititator:(NSNumber *)placeId appLaunched:(BOOL)appLaunched;
 
-- (void)setAcceptor:(NSNumber *)placeId;
+- (void)setAcceptor:(NSNumber *)placeId appLaunched:(BOOL)appLaunched;
 
 // clue for improper use (produces compile time error)
 + (instancetype)alloc __attribute__((unavailable("alloc not available, call shared instead")));

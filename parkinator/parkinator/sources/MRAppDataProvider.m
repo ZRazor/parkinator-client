@@ -41,7 +41,10 @@
     return self;
 }
 
-- (void)setInititator:(NSNumber *)placeId {
+- (void)setInititator:(NSNumber *)placeId appLaunched:(BOOL)appLaunched {
+    if (!placeId && !self.userData.initiatedContractId) {
+        return;
+    }
     [self.userData setInitiatedContractId:placeId];
     [self.userData saveToUserDefaults];
     if (self.tabBarController) {
@@ -52,11 +55,13 @@
                 MRInititatorStatusViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"inititatorController"];
                 [statusViewController setContractId:placeId];
                 MRNavigationController *statusNavigationController = [[MRNavigationController alloc] initWithRootViewController:statusViewController];
-                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:[UIImage imageNamed:@"checkcheck"]]];
+                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:[UIImage imageNamed:@"checkcheck"] selectedImage:[UIImage imageNamed:@"checkcheck"]]];
                 newCntrlers[1] = statusNavigationController;
                 [self.tabBarController setViewControllers:newCntrlers];
                 [self.tabBarController.tabBar.items[1] setEnabled:YES];
-                [self.tabBarController setSelectedIndex:1];
+                if (!appLaunched) {
+                    [self.tabBarController setSelectedIndex:1];
+                }
             } else {
                 if (self.tabBarController.selectedIndex == 1) {
                     [self.tabBarController setSelectedIndex:0];
@@ -69,22 +74,27 @@
 
 //покупатель
 
-- (void)setAcceptor:(NSNumber *)placeId {
-    [self.authService.userData setAcceptedContractId:placeId];
-    [self.authService.userData saveToUserDefaults];
+- (void)setAcceptor:(NSNumber *)placeId appLaunched:(BOOL)appLaunched{
+    if (!placeId && !self.userData.acceptedContractId) {
+        return;
+    }
+    [self.userData setAcceptedContractId:placeId];
+    [self.userData saveToUserDefaults];
     if (self.tabBarController) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (placeId) {
+            if (placeId && !self.userData.initiatedContractId) {
                 NSMutableArray *newCntrlers = [self.tabBarController.viewControllers mutableCopy];
                 UIStoryboard *statusStoryboard = [UIStoryboard storyboardWithName:@"statusView" bundle:nil];
                 MRAcceptorTableViewController *statusViewController = [statusStoryboard instantiateViewControllerWithIdentifier:@"acceptorController"];
                 [statusViewController setContractId:placeId];
                 MRNavigationController *statusNavigationController = [[MRNavigationController alloc] initWithRootViewController:statusViewController];
-                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:nil selectedImage:[UIImage imageNamed:@"checkcheck"]]];
+                [statusNavigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:@"Текущий" image:[UIImage imageNamed:@"checkcheck"] selectedImage:[UIImage imageNamed:@"checkcheck"]]];
                 newCntrlers[1] = statusNavigationController;
                 [self.tabBarController setViewControllers:newCntrlers];
                 [self.tabBarController.tabBar.items[1] setEnabled:YES];
-                [self.tabBarController setSelectedIndex:1];
+                if (!appLaunched) {
+                    [self.tabBarController setSelectedIndex:1];
+                }
             } else {
                 if (self.tabBarController.selectedIndex == 1) {
                     [self.tabBarController setSelectedIndex:0];

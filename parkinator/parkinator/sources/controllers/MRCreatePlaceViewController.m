@@ -102,7 +102,7 @@
                     [newAlert showError:self.navigationController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
                 } else {
                     [self dismissViewControllerAnimated:YES completion:^{
-                        [MRAppDataShared setInititator:newPlaceId];
+                        [MRAppDataShared setInititator:newPlaceId appLaunched:NO];
                     }];
                 }
             }];

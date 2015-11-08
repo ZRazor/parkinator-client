@@ -60,7 +60,7 @@
                 timer = nil;
                 SCLAlertView *newAlert = [[SCLAlertView alloc] init];
                 [newAlert alertIsDismissed:^{
-                    [MRAppDataShared setInititator:nil];
+                    [MRAppDataShared setInititator:nil appLaunched:NO];
                 }];
                 [newAlert showSuccess:self.tabBarController title:@"Ура" subTitle:@"Сделка завершена" closeButtonTitle:@"Закрыть" duration:0.0f];
             } else {
@@ -98,7 +98,7 @@
     [format setDateFormat:@"HH:mm"];
     NSString *leaveDtStr = [format stringFromDate:date];
     [_otherPlaceInfoLabel setText:[NSString stringWithFormat:@"в %@ за %@", leaveDtStr, place.price]];
-    [_carTypeLabel setImage:[UIImage imageNamed:place.initiator.carType]];
+    [_carTypeLabel setImage:[UIImage imageNamed:place.carType]];
     if (place.acceptor.id) {
         [_acceptorCarColorLabel setText:place.acceptor.carColor];
         [_acceptorCarNameLabel setText:place.acceptor.carModel];
@@ -175,7 +175,7 @@
     [[MRAppDataShared placeService] removePlaceWithId:self.contractId block:^(NSError *error) {
         [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
         if (!error) {
-            [MRAppDataShared setInititator:nil];
+            [MRAppDataShared setInititator:nil appLaunched:NO];
         } else {
             SCLAlertView *newAlert = [[SCLAlertView alloc] init];
             [newAlert showError:self.tabBarController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
