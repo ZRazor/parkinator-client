@@ -13,7 +13,6 @@
 @implementation MRStatusMapCellView {
     float prevZoom;
     GMSMarker *marker;
-    BOOL firstRender;
 }
 
 - (void)awakeFromNib {
@@ -21,7 +20,6 @@
     float screenWidth = [[UIScreen mainScreen] bounds].size.width;
     CLLocationDegrees lat = 43.1;
     CLLocationDegrees lon = 131.9;
-    firstRender = YES;
 
     prevZoom = 16;
 
@@ -41,10 +39,9 @@
 }
 
 - (void)setCoordsWithLat:(CLLocationDegrees)lat andLot:(CLLocationDegrees)lon {
-    if (marker.position.latitude == lat && marker.position.longitude == lon && !firstRender) {
+    if (marker && marker.position.latitude == lat && marker.position.longitude == lon) {
         return;
     }
-    firstRender = NO;
     [_mapView clear];
     marker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(lat, lon)];
     [marker setAppearAnimation:kGMSMarkerAnimationNone];
