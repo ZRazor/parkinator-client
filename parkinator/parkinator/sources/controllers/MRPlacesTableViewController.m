@@ -33,7 +33,7 @@
     BOOL firstLoad;
     NSMutableArray *items;
     NSMutableArray *itemsCopy;
-    BOOL isSendingCoords;
+    CLLocation *currentLocation;
 }
 
 - (void)viewDidLoad {
@@ -42,7 +42,6 @@
     [self setNeedsStatusBarAppearanceUpdate];
     
     firstLoad = YES;
-    isSendingCoords = NO;
 
     [self clearItems];
 
@@ -74,12 +73,14 @@
     [self.tableView addSubview:refreshControl];
 
     locationManager = [[CLLocationManager alloc] init];
+    MRAppDataShared.locationManager = locationManager;
     [locationManager setDistanceFilter:kCLDistanceFilterNone];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     [locationManager setDelegate:self];
     [locationManager startUpdatingLocation];
     [locationManager requestWhenInUseAuthorization]; // Add This Line
-    MRAppDataShared.locationManager = locationManager;
+
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(sendCoordsInfo) userInfo:nil repeats:YES];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -88,21 +89,26 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)sendCoordsInfo {
+    if (firstLoad) {
+        return;
+    }
+    if ([[MRAppDataShared userData] acceptedContractId] || [[MRAppDataShared userData] initiatedContractId]) {
+        [[MRAppDataShared placeService] sendCoordsWithLat:@(currentLocation.coordinate.latitude)
+                                                   andLon:@(currentLocation.coordinate.longitude)
+                                                    block:^(){
+
+                                                    }];
+    }
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
+    currentLocation = newLocation;
     if (firstLoad) {
         firstLoad = NO;
         [self loadItemsFromServer];
-    }
-    if ([[MRAppDataShared userData] acceptedContractId]) {
-        isSendingCoords = YES;
-        [[MRAppDataShared placeService] sendCoordsWithLat:@(currentLocation.coordinate.latitude)
-                                                   andLon:@(currentLocation.coordinate.longitude)
-        block:^(){
-            isSendingCoords = NO;
-        }];
     }
 
 }
@@ -158,8 +164,8 @@
 
 - (void)loadItemsFromServer {
     [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    [MRAppDataShared.placeService loadPlacesWithLat:@(locationManager.location.coordinate.latitude)
-                                             andLon:@(locationManager.location.coordinate.longitude)
+    [MRAppDataShared.placeService loadPlacesWithLat:@(currentLocation.coordinate.latitude)
+                                             andLon:@(currentLocation.coordinate.longitude)
                                          andCarType:MRAppDataShared.userData.carType
                                               block:^(NSError *error, NSArray *newItems) {
                                                   [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
@@ -206,7 +212,7 @@
     
     MRPlace *place = items[indexPath.row];
     [cell.addressLabel setText:place.address];
-    [cell.distanceLabel setText:[NSString stringWithFormat:@"%@м", place.dist]];
+    [cell.distanceLabel setText:[NSString stringWithFormat:@"%0.3gкм", [place.dist doubleValue] / 1000.0]];
     [cell.priceLabel setText:[NSString stringWithFormat:@"%@", place.price]];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:[place.leaveDt longValue]];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
