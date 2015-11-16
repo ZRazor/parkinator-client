@@ -54,8 +54,11 @@
     [self addSubview:_addressLabel];
 
     gs = [[GCGeocodingService alloc] init];
-    [gs geocodeCoordinate:camera.target withCallback:@selector(setAddress) withDelegate:self];
-
+    
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        [gs geocodeCoordinate:camera.target withCallback:@selector(setAddress) withDelegate:self];
+    });
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

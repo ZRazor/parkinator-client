@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
-//#define API_BASE_URL @"http://parkinator.mayakdev.ru/api"
-#define API_BASE_URL @"http://mayakdev.ru/api"
+#define API_BASE_URL @"http://parkinator.mayakdev.ru/api"
+//#define API_BASE_URL @"http://mayakdev.ru/api"
 #define API_GET_AUTH_CODE @"/authorize/getAuthCode"
 #define API_GET_ACCESS_TOKEN @"/authorize/getAccessToken"
 #define API_REGISTER @"/register"
