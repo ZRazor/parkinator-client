@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -17,13 +17,63 @@
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
+                            <tableViewSection headerTitle="Цена" id="WWd-M8-Uar" userLabel="Цена">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="CXw-wY-dJZ">
+                                        <rect key="frame" x="0.0" y="594" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CXw-wY-dJZ" id="wCv-rG-uoB">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHe-Ts-fXA">
+                                                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sHe-Ts-fXA" secondAttribute="trailing" constant="33" id="IPO-jU-2uZ"/>
+                                                <constraint firstItem="sHe-Ts-fXA" firstAttribute="top" secondItem="wCv-rG-uoB" secondAttribute="topMargin" constant="-1" id="dwY-SP-WX6"/>
+                                                <constraint firstItem="sHe-Ts-fXA" firstAttribute="leading" secondItem="wCv-rG-uoB" secondAttribute="leadingMargin" id="wMh-av-rDc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sHe-Ts-fXA" secondAttribute="bottom" constant="-2" id="y1a-1G-9Ni"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="sHe-Ts-fXA"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="IPO-jU-2uZ"/>
+                                                    <exclude reference="dwY-SP-WX6"/>
+                                                    <exclude reference="wMh-av-rDc"/>
+                                                    <exclude reference="y1a-1G-9Ni"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="sHe-Ts-fXA"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="IPO-jU-2uZ"/>
+                                                    <include reference="dwY-SP-WX6"/>
+                                                    <include reference="wMh-av-rDc"/>
+                                                    <include reference="y1a-1G-9Ni"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="размер парковочного места" id="qg7-jq-IS5">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="47" id="qRy-jW-Aam" customClass="MRCarTypeSelectorCell">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="47"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qRy-jW-Aam" id="3vC-VW-dwh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="46.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="46"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -34,10 +84,10 @@
                             <tableViewSection headerTitle="Время отбытия" id="bOs-2s-MSy">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3pA-51-Wfj">
-                                        <rect key="frame" x="0.0" y="210.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="212" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3pA-51-Wfj" id="ISC-eK-gNA">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="мин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCc-jM-L5j">
@@ -155,62 +205,12 @@
                             <tableViewSection headerTitle="Карта" footerTitle="Установите координы парковочного места" id="tFr-1U-oL3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="220" id="GId-S3-Yfl" customClass="MRMapCellView">
-                                        <rect key="frame" x="0.0" y="304.5" width="600" height="220"/>
+                                        <rect key="frame" x="0.0" y="307" width="600" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GId-S3-Yfl" id="hyS-VK-njz">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="219.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="219"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Цена" id="WWd-M8-Uar" userLabel="Цена">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="CXw-wY-dJZ">
-                                        <rect key="frame" x="0.0" y="591" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CXw-wY-dJZ" id="wCv-rG-uoB">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHe-Ts-fXA">
-                                                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                </textField>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="sHe-Ts-fXA" secondAttribute="trailing" constant="33" id="IPO-jU-2uZ"/>
-                                                <constraint firstItem="sHe-Ts-fXA" firstAttribute="top" secondItem="wCv-rG-uoB" secondAttribute="topMargin" constant="-1" id="dwY-SP-WX6"/>
-                                                <constraint firstItem="sHe-Ts-fXA" firstAttribute="leading" secondItem="wCv-rG-uoB" secondAttribute="leadingMargin" id="wMh-av-rDc"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="sHe-Ts-fXA" secondAttribute="bottom" constant="-2" id="y1a-1G-9Ni"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="sHe-Ts-fXA"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="IPO-jU-2uZ"/>
-                                                    <exclude reference="dwY-SP-WX6"/>
-                                                    <exclude reference="wMh-av-rDc"/>
-                                                    <exclude reference="y1a-1G-9Ni"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="sHe-Ts-fXA"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="IPO-jU-2uZ"/>
-                                                    <include reference="dwY-SP-WX6"/>
-                                                    <include reference="wMh-av-rDc"/>
-                                                    <include reference="y1a-1G-9Ni"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -219,10 +219,10 @@
                             <tableViewSection headerTitle="Коментарий" id="2cT-GX-nrs" userLabel="Коментарий">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="lgn-4a-JgY">
-                                        <rect key="frame" x="0.0" y="685" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="689" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lgn-4a-JgY" id="3AU-7m-cD6">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WQp-Ip-ts8">
@@ -254,10 +254,10 @@
                             <tableViewSection id="7sa-Pi-4nM" userLabel="Сохранить">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="VWb-6t-H6e">
-                                        <rect key="frame" x="0.0" y="821" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="825" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VWb-6t-H6e" id="vAl-v8-OpM">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmf-c1-rRV" customClass="MRSubmitButton">

@@ -45,7 +45,7 @@
 {
     [super viewDidLoad];
     [self setNeedsStatusBarAppearanceUpdate];
-    [self setTitle:@"Добавить место"];
+    [self setTitle:@""];
 
     NSString *carType = MRAppDataShared.userData.carType;
     NSInteger selIndex = 0;
@@ -54,11 +54,16 @@
     } else if ([carType isEqualToString:CAR_TYPE_BIG]) {
         selIndex = 2;
     }
+    
+    [_priceLabel setText:@"50"];
 
     [self.carTypeCell.carSegment.carControl setSelectedSegmentIndex:selIndex];
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
     self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Добавить" style:UIBarButtonItemStylePlain target:self action:@selector(addPlace)];
+    self.navigationItem.rightBarButtonItem = addButton;
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
@@ -76,7 +81,8 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)addPlaceAction:(MRSubmitButton *)sender {
+- (void)addPlace
+{
     NSString *carType = CAR_TYPE_SMALL;
     if (self.carTypeCell.carSegment.carControl.selectedSegmentIndex == 1) {
         carType = CAR_TYPE_MIDDLE;
@@ -87,25 +93,30 @@
     f.numberStyle = NSNumberFormatterDecimalStyle;
     [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     [MRAppDataShared.placeService createPlaceWithLat:self.mapCell.lat
-    andLon:self.mapCell.lon
-    andCarType:carType
-    andPrice:[f numberFromString:self.priceLabel.text]
+                                              andLon:self.mapCell.lon
+                                          andCarType:carType
+                                            andPrice:[f numberFromString:self.priceLabel.text]
                                           andAddress:self.mapCell.addressLabel.text
-    andComment:self.commentTextView.text
-    andTimeToLeave:@((int)self.minutesSlider.value)
-    block:
-            ^(NSError *error, NSNumber *newPlaceId) {
-                [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
-                if (error) {
-                    NSLog(@"%@", [error localizedDescription]);
-                    SCLAlertView *newAlert = [[SCLAlertView alloc] init];
-                    [newAlert showError:self.navigationController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
-                } else {
-                    [self dismissViewControllerAnimated:YES completion:^{
-                        [MRAppDataShared setInititator:newPlaceId appLaunched:NO];
-                    }];
-                }
-            }];
+                                          andComment:self.commentTextView.text
+                                      andTimeToLeave:@((int)self.minutesSlider.value)
+                                               block:
+     ^(NSError *error, NSNumber *newPlaceId) {
+         [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+         if (error) {
+             NSLog(@"%@", [error localizedDescription]);
+             SCLAlertView *newAlert = [[SCLAlertView alloc] init];
+             [newAlert showError:self.navigationController title:@"Ошибка" subTitle:[error localizedDescription] closeButtonTitle:@"Закрыть" duration:0.0f];
+         } else {
+             [self dismissViewControllerAnimated:YES completion:^{
+                 [MRAppDataShared setInititator:newPlaceId appLaunched:NO];
+             }];
+         }
+     }];
+    
 
+}
+
+- (IBAction)addPlaceAction:(MRSubmitButton *)sender {
+    [self addPlace];
 }
 @end
